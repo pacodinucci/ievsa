@@ -8,15 +8,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Calcula el porcentaje de scroll del usuario
       const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollPercentage =
-        (scrollPosition / (documentHeight - windowHeight)) * 100;
-
-      // Muestra la navbar cuando el scroll llegue al 80%
-      if (scrollPercentage >= 40) {
+      if (scrollPosition >= 700) {
         setShowNavbar(true);
       } else {
         setShowNavbar(false);

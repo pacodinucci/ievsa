@@ -3,8 +3,8 @@ import React from "react";
 
 const LandingContent = () => {
   return (
-    <div className="flex justify-center gap-x-24 max-w-[70vw] mx-auto my-24">
-      <div className="flex flex-col gap-y-4 max-w-[70%]">
+    <div className="flex flex-col md:flex-row justify-center gap-x-24 max-w-[85vw] md:max-w-[70vw] mx-auto my-24">
+      <div className="flex flex-col gap-y-4 md:max-w-[70%]">
         <h3
           className={`${montserrat.className} uppercase text-neutral-500 text-3xl tracking-wide`}
         >
@@ -23,9 +23,9 @@ const LandingContent = () => {
           diseñados a medida y todo tipo de espacios al aire libre.
         </p>
       </div>
-      <div className="py-12">
+      <div className="py-12 mx-auto">
         <button
-          className={`${montserrat.className} uppercase border-2 border-[#4B634E] text-[#4B634E] py-2 hover:bg-[#4B634E] hover:text-white transition duration-300 ease-in-out`}
+          className={`${montserrat.className} uppercase px-4 border-2 border-[#4B634E] text-[#4B634E] py-2 hover:bg-[#4B634E] hover:text-white transition duration-300 ease-in-out`}
         >
           Conocé nuestros proyectos
         </button>

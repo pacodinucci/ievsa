@@ -10,12 +10,6 @@ export default function Home() {
     <main>
       <Navbar />
       <Landing />
-      {/* <PictureComponent
-        src="/garden2.jpg"
-        header="Nuestro trabajo"
-        text="Aca va el texto Aca va el texto Aca va el texto Aca va el texto Aca va el texto Aca va el texto Aca va el texto Aca va el texto Aca va el texto "
-      /> */}
-      {/* <ComponentA /> */}
       <LandingContent />
       <ParallaxPicture />
       <div className="min-h-screen"></div>

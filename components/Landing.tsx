@@ -43,15 +43,16 @@ const Landing = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="z-30 flex flex-col gap-y-4"
+        className="z-30 flex flex-col gap-y-4 items-center"
       >
         <Image
           src="/logoievsa2.png"
           alt="logo ievsa"
           width={500}
           height={300}
+          className="w-3/4 md:w-4/5"
         />
-        <h2 className="uppercase text-[#243329] text-xl tracking-wide">
+        <h2 className="uppercase text-[#243329] text-center text-xs md:text-xl tracking-wide">
           Ingeniería en espacios verdes superpools
         </h2>
       </motion.div>
