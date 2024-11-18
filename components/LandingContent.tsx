@@ -3,7 +3,7 @@ import React from "react";
 
 const LandingContent = () => {
   return (
-    <div className="flex justify-center gap-x-24 max-w-[70vw] mx-auto my-36">
+    <div className="flex justify-center gap-x-24 max-w-[70vw] mx-auto my-24">
       <div className="flex flex-col gap-y-4 max-w-[70%]">
         <h3
           className={`${montserrat.className} uppercase text-neutral-500 text-3xl tracking-wide`}

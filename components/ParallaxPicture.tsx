@@ -11,7 +11,7 @@ const ParallaxPicture = () => {
     const handleScroll = () => {
       if (parallaxRef.current) {
         const rect = parallaxRef.current.getBoundingClientRect();
-        const offset = window.scrollY - rect.top;
+        const offset = -rect.top; // Calcula el desplazamiento relativo al contenedor
         setScrollY(offset);
       }
     };
@@ -23,13 +23,16 @@ const ParallaxPicture = () => {
   }, []);
 
   return (
-    <div ref={parallaxRef} className="relative h-[70vh] mx-4 overflow-hidden">
+    <div
+      ref={parallaxRef}
+      className="relative h-[70vh] mx-4 overflow-hidden" // Contenedor con overflow oculto
+    >
       <div
         className="absolute inset-0"
         style={{
-          transform: `translateY(${scrollY * 0.2}px)`, // Movimiento parallax
-          height: "180%", // La imagen es significativamente más alta que el contenedor
-          top: "-40%", // La imagen comienza más arriba para cubrir siempre el contenedor
+          transform: `translateY(${Math.min(scrollY * 0.3, 100)}px)`, // Permite que la imagen siga moviéndose
+          height: "150%", // La imagen sigue siendo más alta para evitar espacios en blanco
+          top: "-25%", // Comienza fuera del contenedor para cubrir cualquier espacio superior
         }}
       >
         <Image
@@ -37,10 +40,10 @@ const ParallaxPicture = () => {
           alt="ievsa garden"
           layout="fill"
           objectFit="cover"
-          objectPosition="bottom"
-          sizes="(max-width: 768px) 100vw, 50vw"
+          objectPosition="center"
         />
       </div>
+      <div className="bg-white/40 absolute inset-0" />
     </div>
   );
 };
