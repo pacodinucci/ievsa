@@ -36,14 +36,14 @@ const ParallaxPicture = () => {
         }}
       >
         <Image
-          src="/garden4.jpg"
+          src="/image12.png"
           alt="ievsa garden"
           layout="fill"
           objectFit="cover"
           objectPosition="center"
         />
       </div>
-      <div className="bg-white/40 absolute inset-0" />
+      <div className="bg-white/20 absolute inset-0" />
     </div>
   );
 };

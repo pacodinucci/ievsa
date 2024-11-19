@@ -23,9 +23,9 @@ const LandingContent = () => {
           diseñados a medida y todo tipo de espacios al aire libre.
         </p>
       </div>
-      <div className="py-12 mx-auto">
+      <div className="py-12 flex justify-center">
         <button
-          className={`${montserrat.className} uppercase px-4 border-2 border-[#4B634E] text-[#4B634E] py-2 hover:bg-[#4B634E] hover:text-white transition duration-300 ease-in-out`}
+          className={`${montserrat.className} md:h-16 w-3/4 md:w-full uppercase px-4 border-2 border-[#4B634E] text-[#4B634E] py-2 hover:bg-[#4B634E] hover:text-white transition duration-300 ease-in-out`}
         >
           Conocé nuestros proyectos
         </button>

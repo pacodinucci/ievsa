@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Menu } from "lucide-react"; // Importa el ícono de Lucide React
+import { montserrat } from "@/lib/fonts";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      if (scrollPosition >= 700) {
+      if (scrollPosition >= 550) {
         setShowNavbar(true);
       } else {
         setShowNavbar(false);
@@ -29,15 +30,19 @@ const Navbar = () => {
         showNavbar ? "opacity-100" : "opacity-0"
       }`}
     >
-      {/* Logo */}
       <div>
         <Image src="/logoievsa2.png" alt="logo ievsa" width={80} height={0} />
       </div>
 
-      {/* Menu */}
-      <div className="hidden md:block">Menu</div>
+      <div className="hidden md:block">
+        <ul
+          className={`${montserrat.className} uppercase flex gap-x-6 cursor-pointer text-[#4B634E]`}
+        >
+          <li className="hover:text-[#4B634E]/70">Proyectos</li>
+          <li className="hover:text-[#4B634E]/70">Equipo</li>
+        </ul>
+      </div>
 
-      {/* Ícono de menú en pantallas pequeñas */}
       <div className="block md:hidden">
         <Menu size={32} color="#4B634E" />
       </div>

@@ -31,14 +31,14 @@ const Landing = () => {
         }}
       >
         <Image
-          src="/garden1.jpg"
+          src="/image17.png"
           alt="gardenievsa"
           layout="fill"
           objectFit="cover"
-          objectPosition="center"
+          objectPosition="bottom"
         />
       </div>
-      <div className="bg-white/40 absolute inset-0" />
+      <div className="bg-white/20 absolute inset-0" />
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
