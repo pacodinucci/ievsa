@@ -31,11 +31,11 @@ const Landing = () => {
         }}
       >
         <Image
-          src="/image17.png"
+          src="/image14.png"
           alt="gardenievsa"
           layout="fill"
           objectFit="cover"
-          objectPosition="bottom"
+          objectPosition="center"
         />
       </div>
       <div className="bg-white/20 absolute inset-0" />
