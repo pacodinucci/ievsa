@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 import Lenis from "lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
