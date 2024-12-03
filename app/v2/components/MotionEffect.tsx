@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 
 import { montserrat } from "@/lib/fonts";
 import HorizontalScroll from "@/components/HorizontalScroll";
@@ -17,7 +17,7 @@ const MotionEffect = () => {
   useEffect(() => {
     const lenis = new Lenis();
 
-    function raf(time: any) {
+    function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
@@ -34,7 +34,11 @@ const MotionEffect = () => {
   );
 };
 
-const Section1 = ({ scrollYProgress }: any) => {
+const Section1 = ({
+  scrollYProgress,
+}: {
+  scrollYProgress: MotionValue<number>;
+}) => {
   const [lettersRef, setlettersRef] = useArrayRef<HTMLSpanElement>();
 
   function useArrayRef<T>() {
@@ -100,7 +104,11 @@ const Section1 = ({ scrollYProgress }: any) => {
   );
 };
 
-const Section2 = ({ scrollYProgress }: any) => {
+const Section2 = ({
+  scrollYProgress,
+}: {
+  scrollYProgress: MotionValue<number>;
+}) => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 0]);
   return (
