@@ -42,12 +42,14 @@ const Section1 = ({
   const [lettersRef, setlettersRef] = useArrayRef<HTMLSpanElement>();
 
   function useArrayRef<T>() {
-    const lettersRef = useRef<T[]>([]);
-    lettersRef.current = [];
-    return [
-      lettersRef,
-      (ref: T | null) => ref && lettersRef.current.push(ref),
-    ] as const;
+    const lettersRef = useRef<T[]>([]); // Almacena las referencias
+    lettersRef.current = []; // Reinicia el array en cada render
+
+    const setRef = (ref: T | null) => {
+      if (ref) lettersRef.current.push(ref); // Solo agrega referencias válidas
+    };
+
+    return [lettersRef, setRef] as const;
   }
 
   const triggerRef = useRef(null);

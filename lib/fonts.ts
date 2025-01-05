@@ -11,6 +11,7 @@ import {
   Raleway,
   Lato,
   Martel_Sans,
+  Source_Sans_3,
 } from "next/font/google";
 
 export const inter = Inter({
@@ -71,4 +72,9 @@ export const lato = Lato({
 export const martel = Martel_Sans({
   subsets: ["latin"],
   weight: ["200", "300", "400", "600", "700", "800", "900"],
+});
+
+export const source = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });

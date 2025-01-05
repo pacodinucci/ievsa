@@ -3,8 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Navbar from "./Navbar";
-import { montserrat } from "@/lib/fonts";
+import { source } from "@/lib/fonts";
 
 const Landing = () => {
   const { scrollY } = useScroll();
@@ -28,17 +27,30 @@ const Landing = () => {
 
   return (
     <>
-      <Navbar />
       <div
-        className="relative min-h-[100vh] flex justify-center items-center bg-zinc-100 overflow-hidden mx-4"
+        className="relative min-h-[100vh] flex justify-center items-center bg-[#F2F2F2] overflow-hidden mx-4"
         style={{
           backgroundPositionY: `${scrollYBackground * 0.5}px`,
         }}
       >
+        {/* Líneas horizontales animadas */}
+        <motion.span
+          className="w-[90%] bg-green-950 h-[1.5px] absolute top-10 left-20"
+          style={{
+            opacity: textOpacity,
+          }}
+        />
+        <motion.span
+          className="w-[90%] bg-green-950 h-[1.5px] absolute bottom-10 left-20"
+          style={{
+            opacity: textOpacity,
+          }}
+        />
+
         {/* Logo animado */}
         <motion.div
           style={{
-            position: "fixed", // Fija el logo a la ventana del navegador
+            position: "fixed",
             width: logoSize,
             height: logoSize,
             top: logoTop,
@@ -61,24 +73,12 @@ const Landing = () => {
             />
             <motion.h2
               style={{ opacity: textOpacity }}
-              className={`${montserrat.className} uppercase text-[#243329] text-center text-xs md:text-xl tracking-wide font-medium whitespace-nowrap`}
+              className={`${source.className} uppercase text-[#243329] text-center text-xs md:text-2xl tracking-wider font-[300] whitespace-nowrap`}
             >
               Ingeniería en espacios verdes superpools
             </motion.h2>
           </motion.div>
         </motion.div>
-
-        {/* Contenido principal */}
-        <div
-          className="absolute inset-0"
-          style={{
-            transform: `translateY(${scrollYBackground * 0.5}px)`,
-          }}
-        >
-          {/* Imagen de fondo */}
-          <Image src="/image14.png" alt="image" fill objectFit="cover" />
-          <div className="bg-white/20 absolute inset-0" />
-        </div>
       </div>
     </>
   );

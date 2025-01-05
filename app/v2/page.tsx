@@ -4,16 +4,18 @@ import React from "react";
 
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
-// import TextReveal from "./components/TextReveal";
-import MotionEffect from "./components/MotionEffect";
+import TeamSection from "./components/TeamSection";
+import FilosofiaSection from "./components/FilosofiaSection";
+import Timeline from "./components/Timeline";
 
 const V2Page = () => {
   return (
-    <div className="bg-[#cfd1c3]">
+    <div className="bg-[#F2F2F2]">
       <Navbar />
       <Landing />
-      <MotionEffect />
-      <div className="h-[28vh] bg-neutral-300"></div>
+      <TeamSection />
+      <FilosofiaSection />
+      <Timeline />
       <div className="min-h-screen bg-[#192915]"></div>
     </div>
   );
