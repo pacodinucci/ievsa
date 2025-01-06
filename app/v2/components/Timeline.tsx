@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { ChevronDown } from "lucide-react";
 
 const processSteps = [
   {
@@ -44,44 +45,91 @@ const processSteps = [
   },
 ];
 
+const additionalImages = [
+  "/residencial.png",
+  "/empresarial.png",
+  "/territorial.png",
+];
+
 const Timeline = () => {
   return (
-    <div className="relative flex flex-col items-center space-y-12 p-6 md:p-12 my-24">
-      {/* Línea central */}
-      <div className="absolute inset-0 left-1/2 transform -translate-x-1/2 w-1 bg-gray-300"></div>
-      {processSteps.map((step, index) => (
-        <div
-          key={step.id}
-          className={`flex flex-col md:flex-row w-full max-w-4xl ${
-            index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-          }`}
-        >
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-5 w-5 mt-10 bg-[#F2F2F2] rounded-full z-10 flex items-center justify-center">
-            <div className="h-3 w-3 bg-gray-500 rounded-full"></div>
-          </div>
-          {/* Texto */}
+    <>
+      {/* Línea Cronológica */}
+      <div className="relative flex flex-col items-center space-y-12 p-6 md:p-12 mt-24">
+        {/* Línea central */}
+        <div className="absolute inset-0 left-1/2 transform -translate-x-1/2 w-1 bg-[#A69B97]"></div>
+
+        {/* Pasos */}
+        {processSteps.map((step, index) => (
           <div
-            className={`flex-1 p-4 text-center md:text-left ${
-              index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+            key={step.id}
+            className={`flex flex-col md:flex-row w-full max-w-4xl relative ${
+              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
-            <span className="text-sm font-bold uppercase text-gray-500">
-              {step.time}
-            </span>
-            <h3 className="text-lg font-bold text-gray-800 mt-2">
-              {step.title}
-            </h3>
-            <p className="text-gray-600 mt-2">{step.description}</p>
-          </div>
+            {/* Punto doble */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-5 w-5 mt-10 bg-[#F2F2F2] rounded-full z-10 flex items-center justify-center">
+              <div className="h-3 w-3 bg-[#402F2E] rounded-full"></div>
+            </div>
 
-          {/* Imagen */}
-          <div className="flex-1 p-4 ml-16">
-            <Image src={step.image} alt={step.title} width={300} height={0} />
+            {/* Texto */}
+            <div
+              className={`flex-1 p-4 text-center md:text-left ${
+                index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+              }`}
+            >
+              <span className="text-sm font-bold uppercase text-gray-500">
+                {step.time}
+              </span>
+              <h3 className="text-lg font-bold text-gray-800 mt-2">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 mt-2">{step.description}</p>
+            </div>
+
+            {/* Imagen */}
+            <div className="flex-1 p-4">
+              <Image
+                src={step.image}
+                alt={step.title}
+                width={300}
+                height={200}
+              />
+            </div>
           </div>
+        ))}
+      </div>
+
+      {/* Sección Inferior con Imágenes */}
+      <div className="relative bg-[#7F8C79] pt-12 flex justify-center">
+        {/* Extensión de la línea */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-12 bg-[#A69B97]"></div>
+
+        {/* Punto final */}
+        {/* <div className="absolute top-12 left-1/2 transform -translate-x-1/2 h-4 w-4 bg-gray-500 rounded-full z-10"></div> */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-4 w-4 bg-[#7F8C79] rounded-full z-10 flex items-center justify-center">
+          <div className="h-4 w-4 bg-[#402F2E] rounded-full"></div>
         </div>
-      ))}
-    </div>
+
+        {/* Imágenes en fila */}
+        <div className="flex justify-center space-x-12 pb-12 mt-12">
+          {additionalImages.map((img, index) => (
+            <div
+              key={index}
+              className="w-1/3 h-96 flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200"
+            >
+              <Image
+                src={img}
+                alt={`Extra Image ${index + 1}`}
+                width={300}
+                height={300}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
-
 export default Timeline;
