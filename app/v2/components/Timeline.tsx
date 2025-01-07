@@ -1,6 +1,6 @@
-import Image from "next/image";
 import React from "react";
-import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const processSteps = [
   {
@@ -45,10 +45,19 @@ const processSteps = [
   },
 ];
 
-const additionalImages = [
-  "/residencial.png",
-  "/empresarial.png",
-  "/territorial.png",
+const escalas = [
+  {
+    title: "Residencial",
+    src: "/residencial.png",
+  },
+  {
+    title: "Empresarial",
+    src: "/empresarial.png",
+  },
+  {
+    title: "Territorial",
+    src: "/territorial.png",
+  },
 ];
 
 const Timeline = () => {
@@ -61,11 +70,15 @@ const Timeline = () => {
 
         {/* Pasos */}
         {processSteps.map((step, index) => (
-          <div
+          <motion.div
             key={step.id}
             className={`flex flex-col md:flex-row w-full max-w-4xl relative ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Punto doble */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-5 w-5 mt-10 bg-[#F2F2F2] rounded-full z-10 flex items-center justify-center">
@@ -73,7 +86,7 @@ const Timeline = () => {
             </div>
 
             {/* Texto */}
-            <div
+            <motion.div
               className={`flex-1 p-4 text-center md:text-left ${
                 index % 2 === 0 ? "md:pr-8" : "md:pl-8"
               }`}
@@ -85,18 +98,18 @@ const Timeline = () => {
                 {step.title}
               </h3>
               <p className="text-gray-600 mt-2">{step.description}</p>
-            </div>
+            </motion.div>
 
             {/* Imagen */}
-            <div className="flex-1 p-4">
+            <motion.div className="flex-1 p-4">
               <Image
                 src={step.image}
                 alt={step.title}
                 width={300}
                 height={200}
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
 
@@ -106,25 +119,31 @@ const Timeline = () => {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-12 bg-[#A69B97]"></div>
 
         {/* Punto final */}
-        {/* <div className="absolute top-12 left-1/2 transform -translate-x-1/2 h-4 w-4 bg-gray-500 rounded-full z-10"></div> */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-4 w-4 bg-[#7F8C79] rounded-full z-10 flex items-center justify-center">
           <div className="h-4 w-4 bg-[#402F2E] rounded-full"></div>
         </div>
 
         {/* Imágenes en fila */}
         <div className="flex justify-center space-x-12 pb-12 mt-12">
-          {additionalImages.map((img, index) => (
+          {escalas.map((item, index) => (
             <div
               key={index}
-              className="w-1/3 h-96 flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200"
+              className="relative w-1/3 h-96 flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200 cursor-pointer"
             >
+              {/* Imagen */}
               <Image
-                src={img}
-                alt={`Extra Image ${index + 1}`}
+                src={item.src}
+                alt={`Image ${index + 1}`}
                 width={300}
                 height={300}
                 className="object-cover w-full h-full"
               />
+              {/* Título superpuesto */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                <h2 className="text-white text-3xl font-semibold tracking-wide uppercase text-center px-4">
+                  {item.title}
+                </h2>
+              </div>
             </div>
           ))}
         </div>
