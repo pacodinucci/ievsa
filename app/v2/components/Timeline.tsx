@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { source } from "@/lib/fonts";
+import SectionTitle from "./SectionTitle";
 
 const processSteps = [
   {
@@ -63,6 +65,10 @@ const escalas = [
 const Timeline = () => {
   return (
     <>
+      <SectionTitle
+        title="Proyectos"
+        className="uppercase text-green-950 mt-24"
+      />
       {/* Línea Cronológica */}
       <div className="relative flex flex-col items-center space-y-12 p-6 md:p-12 mt-24">
         {/* Línea central */}
@@ -70,15 +76,11 @@ const Timeline = () => {
 
         {/* Pasos */}
         {processSteps.map((step, index) => (
-          <motion.div
+          <div
             key={step.id}
             className={`flex flex-col md:flex-row w-full max-w-4xl relative ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Punto doble */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-5 w-5 mt-10 bg-[#F2F2F2] rounded-full z-10 flex items-center justify-center">
@@ -90,6 +92,10 @@ const Timeline = () => {
               className={`flex-1 p-4 text-center md:text-left ${
                 index % 2 === 0 ? "md:pr-8" : "md:pl-8"
               }`}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <span className="text-sm font-bold uppercase text-gray-500">
                 {step.time}
@@ -101,7 +107,13 @@ const Timeline = () => {
             </motion.div>
 
             {/* Imagen */}
-            <motion.div className="flex-1 p-4">
+            <motion.div
+              className="flex-1 p-4"
+              initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <Image
                 src={step.image}
                 alt={step.title}
@@ -109,7 +121,7 @@ const Timeline = () => {
                 height={200}
               />
             </motion.div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
@@ -128,7 +140,7 @@ const Timeline = () => {
           {escalas.map((item, index) => (
             <div
               key={index}
-              className="relative w-1/3 h-96 flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200 cursor-pointer"
+              className="relative w-1/3 h-96 flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200 cursor-pointer group"
             >
               {/* Imagen */}
               <Image
@@ -136,11 +148,13 @@ const Timeline = () => {
                 alt={`Image ${index + 1}`}
                 width={300}
                 height={300}
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1000"
               />
               {/* Título superpuesto */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                <h2 className="text-white text-3xl font-semibold tracking-wide uppercase text-center px-4">
+                <h2
+                  className={`${source.className} text-white text-3xl font-semibold tracking-wide uppercase text-center px-4`}
+                >
                   {item.title}
                 </h2>
               </div>
