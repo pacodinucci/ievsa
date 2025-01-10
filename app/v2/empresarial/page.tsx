@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const EmpresarialPage = (props: Props) => {
+const EmpresarialPage = () => {
   return (
     <div>
       Proyectos con enfoques estructurales y multifacéticos, comprendiendo la

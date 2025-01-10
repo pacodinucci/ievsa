@@ -1,6 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
-import Image from "next/image";
 
 const phases = [
   {

@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const ResidencialPage = (props: Props) => {
+const ResidencialPage = () => {
   return (
     <div>
       Diseño y planificacion de espacios exteriores funcionales, que dialogan

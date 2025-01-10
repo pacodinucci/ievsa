@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const TerritorialPage = (props: Props) => {
+const TerritorialPage = () => {
   return (
     <div>
       Proyectos integrales que promueven la interacción y el bienestar de los
