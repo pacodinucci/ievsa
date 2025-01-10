@@ -50,3 +50,10 @@ body {
   color: #20361e;
   font-size: 1.8rem;
 }
+
+.MyriadText {
+  font-family: "Myriad", sans-serif;
+  font-weight: 400;
+  color: #20361e;
+  font-size: 1.6rem;
+}

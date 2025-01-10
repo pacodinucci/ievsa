@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { source } from "@/lib/fonts";
 import SectionTitle from "./SectionTitle";
@@ -51,23 +52,27 @@ const escalas = [
   {
     title: "Residencial",
     src: "/residencial.png",
+    link: "/v2/residencial",
   },
   {
     title: "Empresarial",
     src: "/empresarial.png",
+    link: "/v2/empresarial",
   },
   {
     title: "Territorial",
     src: "/territorial.png",
+    link: "/v2/territorial",
   },
 ];
 
 const Timeline = () => {
+  const router = useRouter();
   return (
-    <>
+    <div>
       <SectionTitle
         title="Proyectos"
-        className="uppercase text-green-950 mt-24"
+        className="uppercase text-green-950 mt-24 px-12"
       />
       {/* Línea Cronológica */}
       <div className="relative flex flex-col items-center space-y-12 p-6 md:p-12 mt-24">
@@ -78,7 +83,7 @@ const Timeline = () => {
         {processSteps.map((step, index) => (
           <div
             key={step.id}
-            className={`flex flex-col md:flex-row w-full max-w-4xl relative ${
+            className={`flex flex-col md:flex-row w-full max-w-4xl relative py-12 ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
@@ -94,7 +99,7 @@ const Timeline = () => {
               }`}
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <span className="text-sm font-bold uppercase text-gray-500">
@@ -111,7 +116,7 @@ const Timeline = () => {
               className="flex-1 p-4"
               initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <Image
@@ -136,11 +141,12 @@ const Timeline = () => {
         </div>
 
         {/* Imágenes en fila */}
-        <div className="flex justify-center space-x-12 pb-12 mt-12">
+        <div className="flex justify-center space-x-12 pb-12 my-16">
           {escalas.map((item, index) => (
             <div
               key={index}
               className="relative w-1/3 h-96 flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200 cursor-pointer group"
+              onClick={() => router.push(item.link)}
             >
               {/* Imagen */}
               <Image
@@ -162,7 +168,7 @@ const Timeline = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Timeline;

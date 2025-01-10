@@ -26,7 +26,7 @@ const FilosofiaSection = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center h-screen pt-12"
+      className="relative bg-cover bg-center h-screen pt-12 px-12"
       style={{ backgroundImage: "url('/image13.png')" }}
     >
       <div className="absolute inset-0 bg-[#D9D5D0] z-0"></div>
