@@ -13,6 +13,10 @@ const menuOptions = [
     title: "Proyectos",
     link: "#proyectos",
   },
+  {
+    title: "Contacto",
+    link: "#contacto",
+  },
 ];
 
 const Navbar = () => {
@@ -40,16 +44,16 @@ const Navbar = () => {
         showNavbar ? "opacity-100" : "opacity-0"
       }`}
     >
-      {/* <div>
-        <Image src="/logoievsa2.png" alt="logo ievsa" width={80} height={0} />
-      </div> */}
-
       <div className="hidden md:block">
-        <ul
-          className={`${montserrat.className} uppercase flex gap-x-6 cursor-pointer text-[#4B634E]`}
-        >
-          <li className="hover:text-[#4B634E]/70">Proyectos</li>
-          <li className="hover:text-[#4B634E]/70">Equipo</li>
+        <ul className={`${montserrat.className} uppercase flex gap-x-6`}>
+          {menuOptions.map((option, index) => (
+            <li
+              key={index}
+              className={`${montserrat.className} text-[#243229] text-lg uppercase cursor-pointer font-semibold hover:text-[#243229]/60`}
+            >
+              {option.title}
+            </li>
+          ))}
         </ul>
       </div>
 
