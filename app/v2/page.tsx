@@ -7,6 +7,7 @@ import Landing from "./components/Landing";
 import TeamSection from "./components/TeamSection";
 import FilosofiaSection from "./components/FilosofiaSection";
 import Timeline from "./components/Timeline";
+import Footer from "./components/Footer";
 
 const V2Page = () => {
   return (
@@ -16,7 +17,7 @@ const V2Page = () => {
       <TeamSection />
       <FilosofiaSection />
       <Timeline />
-      <div className="min-h-screen bg-[#192915]"></div>
+      <Footer />
     </div>
   );
 };

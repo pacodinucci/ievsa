@@ -3,7 +3,7 @@
 import React from "react";
 import Phases from "../components/Phases";
 
-const page = () => {
+const ObraPage = () => {
   return (
     <div className="bg-[#F2F2F2] border border-[#F2F2F2]">
       <Phases />
@@ -11,4 +11,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ObraPage;

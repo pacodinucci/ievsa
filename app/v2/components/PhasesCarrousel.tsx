@@ -145,14 +145,14 @@ const Images = ({ imgIndex }: { imgIndex: number }) => {
             key={index}
             animate={{ scale: imgIndex === index ? 0.95 : 0.85 }}
             transition={SPRING_OPTIONS}
-            className="aspect-video w-[100%] shrink-0 rounded-xl relative bg-cover bg-center"
+            className="aspect-video w-[100%] shrink-0 rounded-sm relative bg-cover bg-center"
             style={{
               backgroundImage: `url(${phase.src})`,
               padding: "2rem", // Ajusta el padding según lo necesario
             }}
           >
             {/* Contenido */}
-            <div className="relative z-10 bg-black/50 text-white p-6 rounded-lg max-w-lg">
+            <div className="relative z-10 bg-black/50 text-white p-6 rounded-sm max-w-lg">
               <h4 className="text-lg font-bold">Etapa {phase.phase}</h4>
               <h2 className="text-2xl font-semibold mt-2">{phase.title}</h2>
               <p className="text-base mt-4">{phase.brief}</p>

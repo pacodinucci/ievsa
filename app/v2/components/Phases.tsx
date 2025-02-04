@@ -1,13 +1,27 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
 import PhasesCarrousel from "./PhasesCarrousel";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Phases = () => {
+  const router = useRouter();
+
   return (
     <div>
+      <div className="pl-24 pt-12">
+        <Image
+          src="/logoievsa2.png"
+          alt="logo ievsa"
+          width={200}
+          height={100}
+          className="cursor-pointer"
+          onClick={() => router.push("/v2")}
+        />
+      </div>
       <SectionTitle
         title="Etapabilidad de la obra paisajista"
-        className="uppercase text-green-950 mt-24 mb-12 px-12"
+        className="uppercase text-green-950 mt-16 mb-12 px-12"
       />
       <div className="flex items-center pr-12">
         <p className="MyriadText w-[50%] px-24">
