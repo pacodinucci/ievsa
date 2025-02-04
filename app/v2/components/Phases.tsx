@@ -9,7 +9,7 @@ const Phases = () => {
         title="Etapabilidad de la obra paisajista"
         className="uppercase text-green-950 mt-24 mb-12 px-12"
       />
-      <div className="flex items-center">
+      <div className="flex items-center pr-12">
         <p className="MyriadText w-[50%] px-24">
           La materialización de una obra paisajística en el terreno requiere una
           planificación y ejecución organizada para asegurar un resultado final

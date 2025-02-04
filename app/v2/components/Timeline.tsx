@@ -8,44 +8,44 @@ import SectionTitle from "./SectionTitle";
 const processSteps = [
   {
     id: 1,
-    title: "Permit",
+    title: "Proyecto",
     description:
       "We'll prepare and submit a formal application to your local planning department.",
     image: "/image1.png", // Si no tiene imagen
-    time: "One Week Later",
+    // time: "One Week Later",
   },
   {
     id: 2,
-    title: "Site prep",
+    title: "Obra",
     description:
       "We'll get your yard ready by installing the foundation and utility connections.",
     image: "/image2.png",
-    time: "Approx. Two Weeks Later",
+    // time: "Approx. Two Weeks Later",
   },
   {
     id: 3,
-    title: "Transport",
+    title: "Servicio Post-Venta",
     description:
       "Your backyard begins its journey from our factory to your home.",
     image: "/image3.png",
-    time: "Two Weeks Later",
+    // time: "Two Weeks Later",
   },
-  {
-    id: 4,
-    title: "Crane in",
-    description:
-      "In just a few hours, we crane in the backyard onto its foundation.",
-    image: "/image4.png",
-    time: "After Crane-in Day",
-  },
-  {
-    id: 5,
-    title: "Wrap up",
-    description:
-      "We connect the backyard to the grid, test everything, and ensure it's good to go.",
-    image: "/image5.png",
-    time: "One Day Later",
-  },
+  // {
+  //   id: 4,
+  //   title: "Crane in",
+  //   description:
+  //     "In just a few hours, we crane in the backyard onto its foundation.",
+  //   image: "/image4.png",
+  //   time: "After Crane-in Day",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Wrap up",
+  //   description:
+  //     "We connect the backyard to the grid, test everything, and ensure it's good to go.",
+  //   image: "/image5.png",
+  //   time: "One Day Later",
+  // },
 ];
 
 const escalas = [
@@ -71,7 +71,7 @@ const Timeline = () => {
   return (
     <div>
       <SectionTitle
-        title="Proyectos"
+        title="¿Cómo funciona un proyecto de paisajismo?"
         className="uppercase text-green-950 mt-24 px-12"
       />
       {/* Línea Cronológica */}
@@ -83,7 +83,7 @@ const Timeline = () => {
         {processSteps.map((step, index) => (
           <div
             key={step.id}
-            className={`flex flex-col md:flex-row w-full max-w-4xl relative py-12 ${
+            className={`flex flex-col md:flex-row w-full max-w-3xl relative py-12 ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
@@ -94,7 +94,7 @@ const Timeline = () => {
 
             {/* Texto */}
             <motion.div
-              className={`flex-1 p-4 text-center md:text-left ${
+              className={`flex-1 p-4 text-center md:text-left group cursor-pointer ${
                 index % 2 === 0 ? "md:pr-8" : "md:pl-8"
               }`}
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
@@ -102,13 +102,20 @@ const Timeline = () => {
               viewport={{ once: true, amount: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <span className="text-sm font-bold uppercase text-gray-500">
-                {step.time}
-              </span>
-              <h3 className="text-lg font-bold text-gray-800 mt-2">
+              <h3
+                className={`text-lg font-bold text-gray-800 mt-2 uppercase transition-all group-hover:text-[#402F2E] ${
+                  index % 2 === 0 ? "text-right" : ""
+                }`}
+              >
                 {step.title}
               </h3>
-              <p className="text-gray-600 mt-2">{step.description}</p>
+              <p
+                className={`text-gray-600 mt-2 transition-all group-hover:text-[#402F2E] ${
+                  index % 2 === 0 ? "text-right" : ""
+                }`}
+              >
+                {step.description}
+              </p>
             </motion.div>
 
             {/* Imagen */}

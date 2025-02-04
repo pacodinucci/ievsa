@@ -4,6 +4,17 @@ import React, { useEffect, useState } from "react";
 import { Menu } from "lucide-react"; // Importa el ícono de Lucide React
 import { montserrat } from "@/lib/fonts";
 
+const menuOptions = [
+  {
+    title: "Equipo",
+    link: "#equipo",
+  },
+  {
+    title: "Proyectos",
+    link: "#proyectos",
+  },
+];
+
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 
