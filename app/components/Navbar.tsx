@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed flex justify-end items-center h-[12vh] w-full z-50 px-6 md:px-12 bg-[#8B8C74] bg-opacity-30 backdrop-blur-lg transition-opacity duration-1000 ${
+      className={`fixed flex justify-end items-center h-[12vh] w-full z-50 px-6 md:px-12 bg-white bg-opacity-30 backdrop-blur-lg transition-opacity duration-1000 ${
         showNavbar ? "opacity-100" : "opacity-0"
       }`}
     >

@@ -1,20 +1,25 @@
-// import ComponentA from "@/components/ComponentA";
-import Landing from "@/components/Landing";
-import LandingContent from "@/components/LandingContent";
-import Navbar from "@/components/Navbar";
-import ParallaxPicture from "@/components/ParallaxPicture";
-import PictureComponent from "@/components/PictureComponent";
-import { images, text } from "@/lib/utils";
+"use client";
 
-export default function Home() {
+import React from "react";
+
+import Navbar from "./components/Navbar";
+import Landing from "./components/Landing";
+import TeamSection from "./components/TeamSection";
+import FilosofiaSection from "./components/FilosofiaSection";
+import Timeline from "./components/Timeline";
+// import Footer from "./components/Footer";
+
+const V2Page = () => {
   return (
-    <main>
+    <div className="bg-[#F2F2F2]">
       <Navbar />
       <Landing />
-      <LandingContent />
-      <ParallaxPicture />
-      <PictureComponent text={text} images={images} header="Nuestro trabajo" />
-      <div className="min-h-screen"></div>
-    </main>
+      <TeamSection />
+      <FilosofiaSection />
+      <Timeline />
+      {/* <Footer /> */}
+    </div>
   );
-}
+};
+
+export default V2Page;

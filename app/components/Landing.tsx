@@ -20,7 +20,7 @@ const Landing = () => {
     };
   }, []);
 
-  const logoSize = useTransform(scrollY, [0, 600], [620, 100]);
+  const logoSize = useTransform(scrollY, [0, 600], [620, 120]);
   const logoTop = useTransform(scrollY, [0, 600], ["40%", "4.5%"]);
   const logoLeft = useTransform(scrollY, [0, 600], ["30%", "3%"]);
   const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);

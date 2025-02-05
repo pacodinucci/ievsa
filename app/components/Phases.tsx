@@ -8,7 +8,7 @@ const Phases = () => {
   const router = useRouter();
 
   return (
-    <div>
+    <div className="mb-12">
       <div className="pl-24 pt-12">
         <Image
           src="/logoievsa2.png"
@@ -16,7 +16,7 @@ const Phases = () => {
           width={200}
           height={100}
           className="cursor-pointer"
-          onClick={() => router.push("/v2")}
+          onClick={() => router.push("/")}
         />
       </div>
       <SectionTitle

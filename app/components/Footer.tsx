@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -13,7 +15,7 @@ const Footer = () => {
           width={200}
           height={100}
           className="cursor-pointer"
-          onClick={() => router.push("/v2")}
+          onClick={() => router.push("/")}
         />
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Phases from "../components/Phases";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 const ObraPage = () => {
   return (
@@ -10,7 +10,7 @@ const ObraPage = () => {
       <div className="bg-[#F2F2F2] border border-[#F2F2F2]">
         <Phases />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

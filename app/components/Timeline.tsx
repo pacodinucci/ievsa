@@ -12,7 +12,7 @@ const processSteps = [
     description:
       "We'll prepare and submit a formal application to your local planning department.",
     image: "/image1.png",
-    link: "/v2/proyecto",
+    link: "/proyecto",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const processSteps = [
     description:
       "We'll get your yard ready by installing the foundation and utility connections.",
     image: "/image2.png",
-    link: "/v2/obra",
+    link: "/obra",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const processSteps = [
     description:
       "Your backyard begins its journey from our factory to your home.",
     image: "/image3.png",
-    link: "/v2/postventa",
+    link: "/postventa",
   },
 ];
 
@@ -36,17 +36,17 @@ const escalas = [
   {
     title: "Residencial",
     src: "/residencial.png",
-    link: "/v2/residencial",
+    link: "/residencial",
   },
   {
     title: "Empresarial",
     src: "/empresarial.png",
-    link: "/v2/empresarial",
+    link: "/empresarial",
   },
   {
     title: "Territorial",
     src: "/territorial.png",
-    link: "/v2/territorial",
+    link: "/territorial",
   },
 ];
 
@@ -88,14 +88,14 @@ const Timeline = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h3
-                className={`text-lg font-bold text-gray-800 mt-2 uppercase transition-all group-hover:text-gray-500 ${
+                className={`text-2xl font-bold text-gray-800 mt-2 uppercase transition-all group-hover:text-gray-500 ${
                   index % 2 === 0 ? "text-right" : ""
                 }`}
               >
                 {step.title}
               </h3>
               <p
-                className={`text-gray-600 mt-2 transition-all group-hover:text-gray-500 ${
+                className={`text-gray-600 text-xl mt-2 transition-all group-hover:text-gray-500 ${
                   index % 2 === 0 ? "text-right" : ""
                 }`}
               >
@@ -114,8 +114,8 @@ const Timeline = () => {
               <Image
                 src={step.image}
                 alt={step.title}
-                width={300}
-                height={200}
+                width={500}
+                height={332}
                 className="group-hover:shadow-lg group-hover:-translate-y-2 transition-all duration-1000"
               />
             </motion.div>
