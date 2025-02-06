@@ -7,41 +7,52 @@ import { source } from "@/lib/fonts";
 
 const Landing = () => {
   const { scrollY } = useScroll();
-
-  const [scrollYBackground, setScrollYBackground] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollYBackground(window.scrollY);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Detecta si es móvil (menor a 768px)
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+
+    handleResize(); // Ejecutar al cargar la página
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const logoSize = useTransform(scrollY, [0, 600], [620, 120]);
+  const logoSize = useTransform(
+    scrollY,
+    [0, 600],
+    isMobile ? [350, 100] : [620, 120]
+  );
+
+  const logoLeft = useTransform(
+    scrollY,
+    [0, 600],
+    isMobile ? ["10%", "3%"] : ["30%", "3%"]
+  );
+
+  // const logoSize = useTransform(scrollY, [0, 600], [620, 120]);
   const logoTop = useTransform(scrollY, [0, 600], ["40%", "4.5%"]);
-  const logoLeft = useTransform(scrollY, [0, 600], ["30%", "3%"]);
+  // const logoLeft = useTransform(scrollY, [0, 600], ["30%", "3%"]);
   const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
     <>
-      <div
-        className="relative min-h-[100vh] flex justify-center items-center bg-[#F2F2F2] overflow-hidden mx-4"
-        style={{
-          backgroundPositionY: `${scrollYBackground * 0.5}px`,
-        }}
-      >
+      <div className="relative min-h-screen flex justify-center items-center bg-[#F2F2F2] overflow-hidden mx-4">
         {/* Líneas horizontales animadas */}
         <motion.span
-          className="w-[90%] bg-green-950 h-[1.5px] absolute top-10 left-20"
+          className={`w-[90%] bg-green-950 h-[1.5px] absolute top-10 ${
+            isMobile ? "left-5" : "left-20"
+          }`}
           style={{
             opacity: textOpacity,
           }}
         />
         <motion.span
-          className="w-[90%] bg-green-950 h-[1.5px] absolute bottom-10 left-20"
+          className={`w-[90%] bg-green-950 h-[1.5px] absolute bottom-10 ${
+            isMobile ? "left-5" : "left-20"
+          }`}
           style={{
             opacity: textOpacity,
           }}
