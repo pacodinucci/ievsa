@@ -29,7 +29,7 @@ const Landing = () => {
   const logoLeft = useTransform(
     scrollY,
     [0, 600],
-    isMobile ? ["10%", "3%"] : ["30%", "3%"]
+    isMobile ? ["5%", "3%"] : ["30%", "3%"]
   );
 
   // const logoSize = useTransform(scrollY, [0, 600], [620, 120]);
@@ -39,7 +39,7 @@ const Landing = () => {
 
   return (
     <>
-      <div className="relative min-h-screen flex justify-center items-center bg-[#F2F2F2] overflow-hidden mx-4">
+      <div className="relative min-h-[100dvh] flex justify-center items-center bg-[#F2F2F2] overflow-hidden mx-4">
         {/* Líneas horizontales animadas */}
         <motion.span
           className={`w-[90%] bg-green-950 h-[1.5px] absolute top-10 ${

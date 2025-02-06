@@ -48,7 +48,7 @@ const TeamSection = () => {
   const [expandedBox, setExpandedBox] = useState<string | null>(null);
 
   return (
-    <div className="py-16 px-12 pb-40 bg-[#D9D5D0]">
+    <div className="py-16 px-0 md:px-12 pb-6 md:pb-40 bg-[#D9D5D0]">
       <motion.div
         ref={ref}
         initial={{ x: -200, opacity: 0 }}
@@ -57,6 +57,7 @@ const TeamSection = () => {
           duration: 1,
           ease: "easeOut",
         }}
+        className="hidden md:block"
       >
         <p className="MyriadFont max-w-full md:w-[80%] px-6 md:px-24 py-6 md:p-24 text-center md:text-left">
           Diseñamos espacios sensoriales para ser vividos desde una mirada
@@ -64,6 +65,13 @@ const TeamSection = () => {
           arquitectura y el territorio que habitamos.
         </p>
       </motion.div>
+      <div className="block md:hidden">
+        <p className="MyriadFont max-w-full md:w-[80%] px-6 py-6 text-left">
+          Diseñamos espacios sensoriales para ser vividos desde una mirada
+          antrópica y natural, entendemos el paisaje cómo un conector entre la
+          arquitectura y el territorio que habitamos.
+        </p>
+      </div>
       <div>
         <SectionTitle
           title="Equipo"
@@ -77,13 +85,13 @@ const TeamSection = () => {
             duration: 1,
             ease: "easeOut",
           }}
-          className="mt-12 px-12 flex justify-between"
+          className="mt-12 md:px-12 flex justify-between flex-col md:flex-row items-center gap-y-8"
         >
           {team.map((item) => (
             <motion.div
               key={item.name}
               layoutId={item.name}
-              className={`relative bg-cover bg-center h-96 w-96 rounded-sm flex items-end justify-center text-white text-xl font-bold shadow-md shadow-neutral-800 hover:shadow-[#8B8C74] transition-shadow duration-300 cursor-pointer ${
+              className={`relative bg-cover bg-center h-96 w-[90vw] md:w-96 rounded-sm flex items-end justify-center text-white text-xl font-bold shadow-md shadow-neutral-800 hover:shadow-[#8B8C74] transition-shadow duration-300 cursor-pointer ${
                 expandedBox === item.name ? "z-50" : ""
               }`}
               style={{
@@ -114,7 +122,7 @@ const TeamSection = () => {
               />
               <motion.div
                 layoutId={expandedBox}
-                className="fixed h-[86%] w-[40%] inset-x-10 top-20 mx-auto z-50 shadow-lg bg-white bg-cover bg-center rounded-sm"
+                className="fixed h-[95%] md:h-[86%] w-[90%] md:w-[40%] inset-x-5 md:inset-x-10 top-5 md:top-20 mx-auto z-50 shadow-lg bg-white bg-cover bg-center rounded-sm"
               >
                 <button
                   className="absolute top-2 right-2 text-white bg-black/50 rounded-full p-2 z-50"
@@ -123,8 +131,8 @@ const TeamSection = () => {
                   <X />
                 </button>
 
-                <div className="min-h-full flex flex-row w-full rounded-lg text-[#8C8C8C] MyriadModal">
-                  <div className="w-[50%] p-8 flex flex-col justify-between">
+                <div className="min-h-full flex flex-row w-full rounded-lg text-[#8C8C8C] MyriadModal relative">
+                  <div className="w-full h-full p-8 flex flex-col justify-between absolute top-0 left-0 z-20 bg-white/70 md:static">
                     <h2 className="text-4xl font-bold mb-4">
                       {team.find((box) => box.name === expandedBox)?.name}
                     </h2>
@@ -137,7 +145,7 @@ const TeamSection = () => {
                     {team
                       .find((box) => box.name === expandedBox)
                       ?.text.map((paragraph, idx) => (
-                        <p key={idx} className="mb-4 text-xs">
+                        <p key={idx} className="mb-4 text-sm">
                           {paragraph}
                         </p>
                       ))}
@@ -146,7 +154,7 @@ const TeamSection = () => {
                     </p>
                   </div>
 
-                  <div className="w-[50%] relative">
+                  <div className="w-full relative">
                     <Image
                       src={
                         team.find((box) => box.name === expandedBox)

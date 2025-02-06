@@ -9,7 +9,7 @@ import FilosofiaSection from "./components/FilosofiaSection";
 import Timeline from "./components/Timeline";
 // import Footer from "./components/Footer";
 
-const V2Page = () => {
+const Home = () => {
   return (
     <div className="bg-[#F2F2F2]">
       <Navbar />
@@ -22,4 +22,4 @@ const V2Page = () => {
   );
 };
 
-export default V2Page;
+export default Home;
