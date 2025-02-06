@@ -58,7 +58,7 @@ const TeamSection = () => {
           ease: "easeOut",
         }}
       >
-        <p className="MyriadFont w-[80%] px-24 p-24">
+        <p className="MyriadFont max-w-full md:w-[80%] px-6 md:px-24 py-6 md:p-24 text-center md:text-left">
           Diseñamos espacios sensoriales para ser vividos desde una mirada
           antrópica y natural, entendemos el paisaje cómo un conector entre la
           arquitectura y el territorio que habitamos.
