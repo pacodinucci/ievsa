@@ -78,7 +78,7 @@ const SPRING_OPTIONS = {
   damping: 50,
 };
 
-const PhasesCarrousel = () => {
+const MobilePhasesCarrousel = () => {
   const [phaseIndex, setPhaseIndex] = useState(0);
 
   const dragX = useMotionValue(0);
@@ -111,7 +111,7 @@ const PhasesCarrousel = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-[#F2F2F2] py-12 w-[80vw] md:max-w-4xl mx-auto">
+    <div className="relative overflow-hidden bg-[#F2F2F2] py-12 w-[80vw] mx-auto">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -145,7 +145,7 @@ const Images = ({ imgIndex }: { imgIndex: number }) => {
             key={index}
             animate={{ scale: imgIndex === index ? 0.95 : 0.85 }}
             transition={SPRING_OPTIONS}
-            className="aspect-video w-[100%] shrink-0 rounded-sm relative bg-cover bg-center h-[500px] md:h-auto"
+            className="aspect-video w-[100%] shrink-0 rounded-sm relative bg-cover bg-center h-[500px]"
             style={{
               backgroundImage: `url(${phase.src})`,
               padding: "2rem", // Ajusta el padding según lo necesario
@@ -188,4 +188,4 @@ const Dots = ({
   );
 };
 
-export default PhasesCarrousel;
+export default MobilePhasesCarrousel;
