@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu } from "lucide-react"; // Importa el ícono de Lucide React
 import { montserrat } from "@/lib/fonts";
+import { useRouter } from "next/navigation";
 
 const menuOptions = [
   {
@@ -17,9 +18,14 @@ const menuOptions = [
     title: "Contacto",
     link: "#contacto",
   },
+  {
+    title: "Clientes",
+    link: "/clientes",
+  },
 ];
 
 const Navbar = () => {
+  const router = useRouter();
   const [showNavbar, setShowNavbar] = useState(false);
 
   useEffect(() => {
@@ -50,6 +56,7 @@ const Navbar = () => {
             <li
               key={index}
               className={`${montserrat.className} text-[#243229] text-lg uppercase cursor-pointer font-semibold hover:text-[#243229]/60`}
+              onClick={() => router.push(option.link)}
             >
               {option.title}
             </li>
