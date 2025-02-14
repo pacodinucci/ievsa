@@ -41,7 +41,7 @@ const CustomersPage = () => {
   return (
     <div className="relative min-h-screen">
       <CustomersNavbar data={data} />
-      <div className="MyriadValores pt-48 px-24 flex flex-col gap-4">
+      <div className="MyriadValores pt-48 px-4 md:px-24 flex flex-col gap-4">
         <p>
           Acá mostramos todo lo que le queremos mostrar al cliente, en caso de
           serlo, si no es cliente se le muestran datos de contacto. En el caso
