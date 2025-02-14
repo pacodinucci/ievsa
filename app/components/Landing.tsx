@@ -72,9 +72,9 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
             top: logoTop,
             left: logoLeft,
           }}
-          className={`transition-all duration-300 ${
+          className={`${
             isMobileMenuOpen
-              ? "opacity-0 scale-95 z-20"
+              ? "opacity-0 scale-95 z-20 transition-all duration-300"
               : "opacity-100 scale-100 z-40"
           }`}
         >
