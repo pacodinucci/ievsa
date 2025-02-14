@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Menu } from "lucide-react"; // Importa el ícono de Lucide React
 import { montserrat } from "@/lib/fonts";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const menuOptions = [
   {
@@ -20,13 +21,16 @@ const menuOptions = [
   },
   {
     title: "Clientes",
-    link: "/clientes",
+    link: "/customers",
   },
 ];
 
 const Navbar = () => {
   const router = useRouter();
+  const session = useSession();
   const [showNavbar, setShowNavbar] = useState(false);
+
+  // console.log("Session --> ", session);
 
   useEffect(() => {
     const handleScroll = () => {

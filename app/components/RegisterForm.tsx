@@ -68,6 +68,7 @@ export const RegisterForm = () => {
                       disabled={isPending}
                       placeholder="Nombre"
                       type="text"
+                      className="rounded-none"
                     />
                   </FormControl>
                   <FormMessage />
@@ -86,6 +87,7 @@ export const RegisterForm = () => {
                       disabled={isPending}
                       placeholder="nombre@mail.com"
                       type="email"
+                      className="rounded-none"
                     />
                   </FormControl>
                   <FormMessage />
@@ -104,6 +106,7 @@ export const RegisterForm = () => {
                       disabled={isPending}
                       placeholder="******"
                       type="password"
+                      className="rounded-none"
                     />
                   </FormControl>
                   <FormMessage />
@@ -115,7 +118,7 @@ export const RegisterForm = () => {
           <FormSuccess message={success} />
           <Button
             type="submit"
-            className="w-full bg-[#402F2E] hover:bg-[#402F2E]/80"
+            className="w-full bg-[#402F2E] hover:bg-[#402F2E]/80 rounded-none"
             disabled={isPending}
           >
             Registrar Cuenta

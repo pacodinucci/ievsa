@@ -78,6 +78,7 @@ export const LoginForm = () => {
                       disabled={isPending}
                       placeholder="john.doe@mail.com"
                       type="email"
+                      className="rounded-none"
                     />
                   </FormControl>
                   <FormMessage />
@@ -96,6 +97,7 @@ export const LoginForm = () => {
                       disabled={isPending}
                       placeholder="******"
                       type="password"
+                      className="rounded-none"
                     />
                   </FormControl>
                   <FormMessage />
@@ -107,7 +109,7 @@ export const LoginForm = () => {
           <FormSuccess message={success} />
           <Button
             type="submit"
-            className="w-full bg-[#402F2E] hover:bg-[#402F2E]/80"
+            className="w-full bg-[#402F2E] hover:bg-[#402F2E]/80 rounded-none"
             disabled={isPending}
           >
             Iniciar Sesión
