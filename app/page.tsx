@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";
@@ -10,10 +10,12 @@ import Timeline from "./components/Timeline";
 // import Footer from "./components/Footer";
 
 const Home = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="bg-[#F2F2F2]">
-      <Navbar />
-      <Landing />
+      <Navbar setIsMobileMenuOpen={setIsMobileMenuOpen} />
+      <Landing isMobileMenuOpen={isMobileMenuOpen} />
       <TeamSection />
       <FilosofiaSection />
       <Timeline />

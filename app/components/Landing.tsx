@@ -5,9 +5,14 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { source } from "@/lib/fonts";
 
-const Landing = () => {
+interface LandingProps {
+  isMobileMenuOpen: boolean;
+}
+
+const Landing = ({ isMobileMenuOpen }: LandingProps) => {
   const { scrollY } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
+  // const [siMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,13 +72,17 @@ const Landing = () => {
             top: logoTop,
             left: logoLeft,
           }}
-          className="z-50"
+          className={`transition-all duration-300 ${
+            isMobileMenuOpen
+              ? "opacity-0 scale-95 z-20"
+              : "opacity-100 scale-100 z-40"
+          }`}
         >
           <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="z-30 flex flex-col gap-y-4 items-center"
+            className="z-40 flex flex-col gap-y-4 items-center"
           >
             <Image
               src="/logoievsa2.png"
