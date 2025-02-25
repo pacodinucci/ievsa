@@ -80,7 +80,7 @@ const Timeline = () => {
         {processSteps.map((step, index) => (
           <div
             key={step.id}
-            className={`flex flex-col md:flex-row w-full max-w-3xl relative py-0 md:py-12 cursor-pointer group ${
+            className={`flex flex-col md:flex-row w-full max-w-4xl relative py-0 md:py-12 cursor-pointer group ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
             onClick={() => router.push(step.link)}
@@ -157,7 +157,9 @@ const Timeline = () => {
                   alt={step.title}
                   width={500}
                   height={332}
-                  className="group-hover:shadow-lg group-hover:-translate-y-2 transition-all duration-1000"
+                  className={`group-hover:shadow-lg group-hover:-translate-y-2 transition-all duration-1000 xl2:scale-150 ${
+                    index % 2 === 0 ? "xl2:ml-28" : "xl2:-ml-28"
+                  } ${index === processSteps.length - 1 && "xl2:mb-12"}`}
                 />
               </motion.div>
             )}
@@ -180,7 +182,7 @@ const Timeline = () => {
           {escalas.map((item, index) => (
             <div
               key={index}
-              className="relative w-[99%] md:w-1/3 h-32 md:h-96 flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200 cursor-pointer group"
+              className="relative w-[99%] md:w-1/3 h-32 md:h-96 xl2:w-[30vw] xl2:h-[50vh] flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200 cursor-pointer group"
               onClick={() => router.push(item.link)}
             >
               {/* Imagen */}
