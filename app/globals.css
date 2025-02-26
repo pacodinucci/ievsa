@@ -23,6 +23,22 @@ body {
   color: #20361e;
   font-size: 2.5rem;
 }
+
+.MyriadTeamSection {
+  font-family: "Myriad", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.MyriadTeamSectionSmall {
+  font-family: "Myriad", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.1rem;
+}
+
 .MyriadModal {
   font-family: "Myriad", sans-serif;
   font-weight: 400;

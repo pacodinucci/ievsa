@@ -91,7 +91,7 @@ const TeamSection = () => {
             <motion.div
               key={item.name}
               layoutId={item.name}
-              className={`relative bg-cover bg-center h-96 w-[90vw] md:w-96 xl2:h-[500px] xl2:w-[500px] rounded-sm flex items-end justify-center text-white text-xl font-bold shadow-md shadow-neutral-800 hover:shadow-[#8B8C74] transition-shadow duration-300 cursor-pointer ${
+              className={`relative bg-cover bg-center h-96 w-[90vw] md:w-96 xl2:h-[500px] xl2:w-[500px] rounded-sm flex items-end justify-center text-white text-xl font-bold shadow-md shadow-neutral-800 hover:shadow-[#8e8f87] transition-shadow duration-300 cursor-pointer ${
                 expandedBox === item.name ? "z-50" : ""
               }`}
               style={{
@@ -99,11 +99,13 @@ const TeamSection = () => {
               }}
               onClick={() => setExpandedBox(item.name)}
             >
-              <div className="p-4 text-[#F2F2F2] bg-black/50 rounded-sm mx-2 my-2">
-                <h3 className="text-2xl tracking-wide font-extralight">
+              <div className="pt-4 rounded-b-sm">
+                {/* <h3 className="text-2xl tracking-wide font-extralight"> */}
+                <h3 className="MyriadTeamSection bg-[#402f2e]/60 px-2 py-2 w-4/5 rounded-sm rounded-br-none rounded-bl-none">
                   {item.name}
                 </h3>
-                <p className="text-sm tracking-wider font-extralight">
+                {/* <p className="text-sm tracking-wider font-thin"> */}
+                <p className="MyriadTeamSectionSmall px-2 py-1 pb-2 w-4/5 bg-[#402f2e]/60 rounded-sm rounded-tl-none rounded-r-none">
                   {item.role}
                 </p>
               </div>
