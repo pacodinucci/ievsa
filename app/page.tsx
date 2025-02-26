@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
 import Landing from "./components/Landing";

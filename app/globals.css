@@ -44,6 +44,14 @@ body {
   font-size: 1.4rem;
 }
 
+.MyriadEscalasMobile {
+  font-family: "Myriad", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
 .MyriadText {
   font-family: "Myriad", sans-serif;
   font-weight: 400;

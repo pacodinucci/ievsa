@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { source } from "@/lib/fonts";
+import { montserrat, source } from "@/lib/fonts";
 import SectionTitle from "./SectionTitle";
 
 const processSteps = [
@@ -56,10 +56,10 @@ const Timeline = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Breakpoint de Tailwind (md)
+      setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // Verificar en el primer render
+    handleResize(); // Ejecutar en el primer render
     window.addEventListener("resize", handleResize); // Escuchar cambios de tamaño
 
     return () => window.removeEventListener("resize", handleResize);
@@ -178,31 +178,60 @@ const Timeline = () => {
         </div>
 
         {/* Imágenes en fila */}
-        <div className="flex justify-center flex-col md:flex-row space-x-0 space-y-12 md:space-y-0 md:space-x-6 pb-12 my-16">
-          {escalas.map((item, index) => (
-            <div
-              key={index}
-              className="relative w-[99%] md:w-1/3 h-32 md:h-96 xl2:w-[30vw] xl2:h-[50vh] flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200 cursor-pointer group"
-              onClick={() => router.push(item.link)}
-            >
-              {/* Imagen */}
-              <Image
-                src={item.src}
-                alt={`Image ${index + 1}`}
-                width={300}
-                height={300}
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1000"
-              />
-              {/* Título superpuesto */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                <h2
-                  className={`${source.className} text-white text-3xl font-semibold tracking-wide uppercase text-center px-4`}
-                >
-                  {item.title}
-                </h2>
-              </div>
-            </div>
-          ))}
+        <div className="flex justify-center flex-col space-x-0 space-y-12 md:space-y-0 md:space-x-6 pb-12">
+          <div className="flex justify-center flex-col md:flex-row space-x-0 space-y-6 md:space-y-0 md:space-x-6 my-8 md:my-16 overflow-hidden">
+            {isMobile
+              ? escalas.map((item, index) => (
+                  <div
+                    key={index}
+                    className="h-40 overflow-hidden w-[90vw] relative flex justify-center items-center"
+                  >
+                    <Image
+                      src={item.src}
+                      alt="escala image"
+                      fill
+                      className="object-cover object-center"
+                    />
+                    {/* <h1
+                      className={`${montserrat.className} uppercase text-3xl font-medium tracking-wider text-white z-10`}
+                    >
+                      {item.title}
+                    </h1> */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                      <h2
+                        className={`${source.className} text-white text-3xl font-semibold tracking-wide uppercase text-center px-4`}
+                      >
+                        {item.title}
+                      </h2>
+                    </div>
+                    {/* <div className="absolute inset-0 bg-black/50" /> */}
+                  </div>
+                ))
+              : escalas.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative w-[99%] md:w-1/3 h-32 md:h-96 xl2:w-[30vw] xl2:h-[50vh] flex justify-center items-center overflow-hidden rounded-sm shadow-lg bg-gray-200 cursor-pointer group"
+                    onClick={() => router.push(item.link)}
+                  >
+                    {/* Imagen */}
+                    <Image
+                      src={item.src}
+                      alt={`Image ${index + 1}`}
+                      width={300}
+                      height={300}
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1000"
+                    />
+                    {/* Título superpuesto */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                      <h2
+                        className={`${source.className} text-white text-3xl font-semibold tracking-wide uppercase text-center px-4`}
+                      >
+                        {item.title}
+                      </h2>
+                    </div>
+                  </div>
+                ))}
+          </div>
         </div>
       </div>
     </div>
