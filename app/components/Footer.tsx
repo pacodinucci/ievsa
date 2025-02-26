@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const Footer = () => {
   const router = useRouter();
   return (
-    <div className="flex justify-center items-center bg-[#D9D5D0] h-[30vh]">
+    <div className="flex justify-center items-center bg-[#D9D5D0] h-[20vh]">
       <div>
         <Image
           src="/logoievsa2.png"

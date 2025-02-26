@@ -38,7 +38,7 @@ const FilosofiaSection = () => {
           className="uppercase text-green-950 mt-12"
         />
         <div className="flex flex-col md:flex-row items-center">
-          <p className="MyriadValores w-[70%] px-24 p-24 hidden md:block">
+          <p className="MyriadValoresXl2 w-[65%] px-24 p-24 hidden md:hidden xl2:block">
             Para desarrollar una propuesta de diseño, es necesario abordar
             diversos aspectos que permitan una visión integral del territorio.
             Esto implica comprender su geomorfología, hidrología, composición
@@ -48,7 +48,7 @@ const FilosofiaSection = () => {
             pequeños espacios desempeñan su rol como parche conector dentro de
             la matriz general que es el territorio urbano.
           </p>
-          <p className="MyriadValoresMobile w-full px-6 py-6 md:hidden block">
+          <p className="MyriadValores w-[70%] px-24 p-24 hidden md:block xl2:hidden">
             Para desarrollar una propuesta de diseño, es necesario abordar
             diversos aspectos que permitan una visión integral del territorio.
             Esto implica comprender su geomorfología, hidrología, composición
@@ -58,7 +58,17 @@ const FilosofiaSection = () => {
             pequeños espacios desempeñan su rol como parche conector dentro de
             la matriz general que es el territorio urbano.
           </p>
-          <div className="flex items-center justify-center w-[90%] h-[90%] md:w-auto md:h-96 mt-6 md:mt-0">
+          <p className="MyriadValoresMobile w-full px-6 py-6 md:hidden block xl2:hidden">
+            Para desarrollar una propuesta de diseño, es necesario abordar
+            diversos aspectos que permitan una visión integral del territorio.
+            Esto implica comprender su geomorfología, hidrología, composición
+            florística y la relevancia ecosistémica, considerando la fauna que
+            lo habita. Este análisis es crucial independientemente de la escala,
+            ya que nos centramos en una intervención macro, en la que los
+            pequeños espacios desempeñan su rol como parche conector dentro de
+            la matriz general que es el territorio urbano.
+          </p>
+          <div className="flex items-center justify-center w-[90%] h-[90%] md:w-auto md:h-96 xl2:h-[550px] mt-6 md:mt-0">
             {images && (
               <Image
                 src={images[currentImageIndex]}

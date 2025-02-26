@@ -66,8 +66,8 @@ const Navbar = ({ setIsMobileMenuOpen }: NavbarProps) => {
   };
 
   return (
-    <div
-      className={`fixed flex justify-end items-center h-[12vh] w-full z-40 px-6 md:px-12 bg-white bg-opacity-30 backdrop-blur-lg transition-opacity duration-1000 ${
+    <nav
+      className={`fixed flex justify-end items-center h-[10vh] w-full z-40 px-6 md:px-12 bg-white bg-opacity-30 backdrop-blur-lg transition-opacity duration-1000 ${
         showNavbar ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -140,7 +140,7 @@ const Navbar = ({ setIsMobileMenuOpen }: NavbarProps) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </nav>
   );
 };
 

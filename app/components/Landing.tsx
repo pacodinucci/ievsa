@@ -37,9 +37,8 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
     isMobile ? ["5%", "3%"] : ["30%", "3%"]
   );
 
-  // const logoSize = useTransform(scrollY, [0, 600], [620, 120]);
-  const logoTop = useTransform(scrollY, [0, 600], ["40%", "4.5%"]);
-  // const logoLeft = useTransform(scrollY, [0, 600], ["30%", "3%"]);
+  const logoTop = useTransform(scrollY, [0, 600], ["40%", "3.2%"]);
+
   const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
