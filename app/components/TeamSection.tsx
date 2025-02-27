@@ -48,7 +48,7 @@ const TeamSection = () => {
   const [expandedBox, setExpandedBox] = useState<string | null>(null);
 
   return (
-    <div className="py-16 px-0 md:px-12 pb-6 md:pb-40 bg-[#D9D5D0]">
+    <div className="py-16 px-0 md:px-12 pb-6 md:pb-12 bg-[#D9D5D0]">
       <motion.div
         ref={ref}
         initial={{ x: -200, opacity: 0 }}
@@ -59,7 +59,7 @@ const TeamSection = () => {
         }}
         className="hidden md:block"
       >
-        <p className="MyriadFont max-w-full md:w-[80%] px-6 md:px-24 py-6 md:p-24 text-center md:text-left">
+        <p className="MyriadFont max-w-full md:w-[80%] px-6 md:px-24 py-6 md:p-24 text-center md:text-left leading-relaxed">
           Diseñamos espacios sensoriales para ser vividos desde una mirada
           antrópica y natural, entendemos el paisaje cómo un conector entre la
           arquitectura y el territorio que habitamos.
