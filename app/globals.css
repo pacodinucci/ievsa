@@ -149,15 +149,31 @@ body {
 
 @layer utilities {
   .text-myriad-sm {
-    font-size: clamp(14px, 2vw, 16px);
+    font-family: "Myriad", sans-serif;
+    font-size: clamp(16px, 1vw, 16px);
+    line-height: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 0.03rem;
   }
   .text-myriad-md {
-    font-size: clamp(16px, 2.2vw, 18px);
+    font-family: "Myriad", sans-serif;
+    font-size: clamp(12px, 1vw, 12px);
+    line-height: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 0.03rem;
   }
   .text-myriad-lg {
-    font-size: clamp(18px, 2.5vw, 22px);
+    font-family: "Myriad", sans-serif;
+    font-size: clamp(14px, 1vw, 16px);
+    line-height: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 0.03rem;
   }
   .text-myriad-xl {
-    font-size: clamp(22px, 3vw, 26px);
+    font-family: "Myriad", sans-serif;
+    font-size: clamp(16px, 1vw, 22px);
+    line-height: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 0.03rem;
   }
 }

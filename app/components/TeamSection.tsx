@@ -105,7 +105,7 @@ const TeamSection = () => {
                   {item.name}
                 </h3>
                 {/* <p className="text-sm tracking-wider font-thin"> */}
-                <p className="MyriadTeamSectionSmall px-2 py-1 pb-2 w-full rounded-sm rounded-tl-none rounded-r-none">
+                <p className="text-myriad-sm md:text-myriad-md lg:text-myriad-lg xl:text-myriad-xl px-2 py-1 pb-2 w-full rounded-sm rounded-tl-none rounded-r-none">
                   {item.role}
                 </p>
               </div>
