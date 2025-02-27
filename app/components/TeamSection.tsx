@@ -85,7 +85,7 @@ const TeamSection = () => {
             duration: 1,
             ease: "easeOut",
           }}
-          className="mt-12 md:px-12 flex justify-between flex-col md:flex-row items-center gap-y-8"
+          className="mt-12 md:px-12 flex justify-between flex-col md:flex-row items-center gap-y-8 gap-x-4"
         >
           {team.map((item) => (
             <motion.div
@@ -99,13 +99,13 @@ const TeamSection = () => {
               }}
               onClick={() => setExpandedBox(item.name)}
             >
-              <div className="pt-4 rounded-b-sm">
+              <div className="pt-4 rounded-b-sm bg-neutral-600/70 w-full h-28">
                 {/* <h3 className="text-2xl tracking-wide font-extralight"> */}
-                <h3 className="MyriadTeamSection bg-[#402f2e]/60 px-2 py-2 w-4/5 rounded-sm rounded-br-none rounded-bl-none">
+                <h3 className="MyriadTeamSection px-2 py-2 w-full rounded-sm rounded-br-none rounded-bl-none">
                   {item.name}
                 </h3>
                 {/* <p className="text-sm tracking-wider font-thin"> */}
-                <p className="MyriadTeamSectionSmall px-2 py-1 pb-2 w-4/5 bg-[#402f2e]/60 rounded-sm rounded-tl-none rounded-r-none">
+                <p className="MyriadTeamSectionSmall px-2 py-1 pb-2 w-full rounded-sm rounded-tl-none rounded-r-none">
                   {item.role}
                 </p>
               </div>

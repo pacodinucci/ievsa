@@ -7,6 +7,7 @@ import Landing from "./components/Landing";
 import TeamSection from "./components/TeamSection";
 import FilosofiaSection from "./components/FilosofiaSection";
 import Timeline from "./components/Timeline";
+import FilosofiaTablet from "./components/FilosofiaTablet";
 // import Footer from "./components/Footer";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <Landing isMobileMenuOpen={isMobileMenuOpen} />
       <TeamSection />
       <FilosofiaSection />
+      <FilosofiaTablet />
       <Timeline />
       {/* <Footer /> */}
     </div>

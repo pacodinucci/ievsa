@@ -146,3 +146,18 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .text-myriad-sm {
+    font-size: clamp(14px, 2vw, 16px);
+  }
+  .text-myriad-md {
+    font-size: clamp(16px, 2.2vw, 18px);
+  }
+  .text-myriad-lg {
+    font-size: clamp(18px, 2.5vw, 22px);
+  }
+  .text-myriad-xl {
+    font-size: clamp(22px, 3vw, 26px);
+  }
+}
