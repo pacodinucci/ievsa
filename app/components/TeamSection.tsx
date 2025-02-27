@@ -57,13 +57,14 @@ const TeamSection = () => {
           duration: 1,
           ease: "easeOut",
         }}
-        className="hidden md:block"
+        className="hidden md:block relative"
       >
         <p className="MyriadFont max-w-full md:w-[80%] px-6 md:px-24 py-6 md:p-24 text-center md:text-left leading-relaxed">
           Diseñamos espacios sensoriales para ser vividos desde una mirada
           antrópica y natural, entendemos el paisaje cómo un conector entre la
           arquitectura y el territorio que habitamos.
         </p>
+        <div id="equipo" className="absolute bottom-16 left-0 opacity-0" />
       </motion.div>
       <div className="block md:hidden">
         <p className="MyriadFont max-w-full md:w-[80%] px-6 py-6 text-left">

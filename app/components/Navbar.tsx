@@ -65,6 +65,19 @@ const Navbar = ({ setIsMobileMenuOpen }: NavbarProps) => {
     router.push(link);
   };
 
+  const handleScrollNavigation = (link: string) => {
+    setIsMenuOpen(false);
+
+    if (link.startsWith("#")) {
+      const targetElement = document.querySelector(link);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      router.push(link);
+    }
+  };
+
   return (
     <nav
       className={`fixed flex justify-end items-center h-[10vh] w-full z-40 px-6 md:px-12 bg-white bg-opacity-30 backdrop-blur-lg transition-opacity duration-1000 ${
@@ -77,7 +90,7 @@ const Navbar = ({ setIsMobileMenuOpen }: NavbarProps) => {
             <li
               key={index}
               className={`${montserrat.className} text-[#243229] text-lg uppercase cursor-pointer font-semibold hover:text-[#243229]/60`}
-              onClick={() => router.push(option.link)}
+              onClick={() => handleScrollNavigation(option.link)}
             >
               {option.title}
             </li>
@@ -131,7 +144,7 @@ const Navbar = ({ setIsMobileMenuOpen }: NavbarProps) => {
                 <li
                   key={index}
                   className="cursor-pointer hover:text-[#ccc] transition-colors"
-                  onClick={() => handleNavigation(option.link)}
+                  onClick={() => handleScrollNavigation(option.link)}
                 >
                   {option.title}
                 </li>

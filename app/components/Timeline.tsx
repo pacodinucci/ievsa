@@ -66,7 +66,7 @@ const Timeline = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden">
+    <div id="proyectos" className="overflow-x-hidden">
       <SectionTitle
         title="¿Cómo funciona un proyecto de paisajismo?"
         className="uppercase text-green-950 mt-24 px-6 md:px-12"
