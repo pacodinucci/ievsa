@@ -92,7 +92,7 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
             />
             <motion.h2
               style={{ opacity: textOpacity }}
-              className={`${source.className} uppercase text-[#243329] text-center text-xs md:text-2xl tracking-wider font-[300] whitespace-nowrap`}
+              className={`${source.className} uppercase text-[#243329] text-center text-xs md:text-[1.67rem] tracking-widest font-[300] whitespace-nowrap`}
             >
               Ingeniería en espacios verdes S.A.
             </motion.h2>
