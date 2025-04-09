@@ -94,7 +94,7 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
               style={{ opacity: textOpacity }}
               className={`${source.className} uppercase text-[#243329] text-center text-xs md:text-2xl tracking-wider font-[300] whitespace-nowrap`}
             >
-              Ingeniería en espacios verdes superpools
+              Ingeniería en espacios verdes S.A.
             </motion.h2>
           </motion.div>
         </motion.div>

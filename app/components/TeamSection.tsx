@@ -92,7 +92,7 @@ const TeamSection = () => {
             <motion.div
               key={item.name}
               layoutId={item.name}
-              className={`relative bg-cover bg-center h-96 w-[90vw] md:w-96 xl2:h-[500px] xl2:w-[500px] rounded-sm flex items-end justify-center text-white text-xl font-bold shadow-md shadow-neutral-800 hover:shadow-[#8e8f87] transition-shadow duration-300 cursor-pointer ${
+              className={`border-4 hover:shadow-lg shadow-black border-[#F2F2F2] rounded-sm relative bg-cover bg-center h-96 w-[90vw] md:w-96 xl2:h-[500px] xl2:w-[500px] flex items-end justify-center text-white text-xl font-bold transition-shadow duration-300 cursor-pointer ${
                 expandedBox === item.name ? "z-50" : ""
               }`}
               style={{

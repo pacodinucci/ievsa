@@ -136,15 +136,17 @@ const ProyectoPage = () => {
       </div>
 
       {/* SECCIONES HORIZONTALES CONTROLADAS POR MENÚ */}
-      <div className="w-full overflow-x-auto scroll-smooth no-scrollbar">
+      <div className="w-full overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory">
         <div className="flex w-[300vw]">
           {proyectosSections.map((section, index) => (
             <section
               key={index}
               id={`section-${index}`}
               data-index={index}
-              ref={(el) => (sectionRefs.current[index] = el)}
-              className="h-[90vh] w-screen flex flex-col justify-center items-center bg-white p-8"
+              ref={(el) => {
+                sectionRefs.current[index] = el;
+              }}
+              className="h-[90vh] w-screen flex flex-col justify-center items-center bg-white p-8 snap-start"
             >
               <ProjectSnap
                 title={section.title}
