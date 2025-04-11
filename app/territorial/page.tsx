@@ -23,7 +23,7 @@ const territorialImages = [
 
 const TerritorialPage = () => {
   return (
-    <div className="">
+    <div className="bg-[#F2F2F2]">
       <PageHeader title="Territorial" />
       <div className="grid grid-cols-[15%_1fr_15%] pb-24 px-12">
         <div /> {/* Espacio izquierdo */}
