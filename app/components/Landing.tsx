@@ -81,7 +81,7 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="z-40 flex flex-col gap-y-4 items-center"
+            className="z-40 flex flex-col gap-y-2 md:gap-y-4 items-center"
           >
             <Image
               src="/logoievsa2.png"
@@ -92,7 +92,7 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
             />
             <motion.h2
               style={{ opacity: textOpacity }}
-              className={`${source.className} uppercase text-[#243329] text-center text-xs md:text-[1.67rem] tracking-widest font-[300] whitespace-nowrap`}
+              className={`${source.className} uppercase text-[#243329] text-center text-[.88rem] md:text-[1.67rem] tracking-widest font-[300] whitespace-nowrap`}
             >
               Ingeniería en espacios verdes S.A.
             </motion.h2>

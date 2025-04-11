@@ -62,6 +62,10 @@ const ProyectoPage = () => {
 
   const sections = [
     {
+      title: "Arquitectura del paisaje",
+      content: "Contenido del croquis preliminar...",
+    },
+    {
       title: "Croquis Preliminar",
       content: "Contenido del croquis preliminar...",
     },
@@ -75,7 +79,7 @@ const ProyectoPage = () => {
   return (
     <div className="bg-[#F2F2F2] min-h-screen">
       <PageHeader title="Proyecto" />
-      <div
+      {/* <div
         ref={scrollRef}
         className="overflow-y-scroll snap-y snap-mandatory h-[70vh] no-scrollbar"
       >
@@ -107,10 +111,10 @@ const ProyectoPage = () => {
             </p>
           </section>
         ))}
-      </div>
+      </div> */}
 
       {/* MENÚ DE NAVEGACIÓN HORIZONTAL */}
-      <div className="w-full flex gap-6 py-6 px-24 bg-white">
+      <div className="w-full flex gap-6 py-6 px-24">
         {sections.map((label, index) => (
           <button
             key={index}
@@ -137,7 +141,7 @@ const ProyectoPage = () => {
 
       {/* SECCIONES HORIZONTALES CONTROLADAS POR MENÚ */}
       <div className="w-full overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory">
-        <div className="flex w-[300vw]">
+        <div className="flex w-[400vw]">
           {proyectosSections.map((section, index) => (
             <section
               key={index}
@@ -146,12 +150,13 @@ const ProyectoPage = () => {
               ref={(el) => {
                 sectionRefs.current[index] = el;
               }}
-              className="h-[90vh] w-screen flex flex-col justify-center items-center bg-white p-8 snap-start"
+              className="h-[90vh] w-screen flex flex-col justify-center items-center p-8 snap-start"
             >
               <ProjectSnap
                 title={section.title}
                 text={section.text}
                 images={section.images}
+                index={index}
               />
             </section>
           ))}

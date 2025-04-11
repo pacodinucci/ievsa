@@ -7,6 +7,11 @@ export const projectText = [
 
 export const proyectosSections = [
   {
+    title: "Arquitectura del paisaje",
+    text: projectText.join(" "),
+    images: [],
+  },
+  {
     title: "Croquis preliminar",
     text: "Siendo la primer etapa corresponde a la primer aproximación de idea. En este caso trabajamos sobre la intensión proyectual, sectorizando y estructurando la propuesta, comunicando intenciones e ideas sin definir la morfología final, sino los espacios y sus jerarquías. Se presentan los primeros croquis de idea, bocetos e imágenes de referencia. A continuación se detallan fragmentos correspondientes a ésta etapa.",
     images: ["/croquis1.png", "/croquis2.png"],
