@@ -27,3 +27,60 @@ export const proyectosSections = [
     images: ["/croquis1.png", "/croquis2.png"],
   },
 ];
+
+export const residencialImages = [
+  {
+    src: "/residencial1.jpg",
+    alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+  },
+  {
+    src: "/residencial2.jpg",
+    alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
+  },
+  {
+    src: "/residencial3.jpg",
+    alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
+  },
+  {
+    src: "/residencial4.jpg",
+    alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+  },
+];
+
+export const empresarialImages = [
+  {
+    src: "/empresarial1.jpg",
+    alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+  },
+  {
+    src: "/empresarial2.jpg",
+    alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
+  },
+  {
+    src: "/empresarial3.jpg",
+    alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
+  },
+  {
+    src: "/empresarial4.jpg",
+    alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+  },
+];
+
+export const territorialImages = [
+  {
+    src: "/FINAL 1.jpg",
+    alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+  },
+  {
+    src: "/FINAL 2.jpg",
+    alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
+  },
+  {
+    src: "/FINAL 3.jpg",
+    alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
+  },
+  {
+    src: "/FINAL 5.jpg",
+    alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+  },
+];
