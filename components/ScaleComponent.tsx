@@ -13,7 +13,7 @@ interface ScaleComponentProps {
 
 const ScaleComponent = ({ images }: ScaleComponentProps) => {
   return (
-    <div className="grid grid-cols-[15%_1fr_15%] px-6 w-full">
+    <div className="grid grid-cols-[15%_1fr_15%] px-8 py-12 w-full">
       <div className={`${montserrat.className}`}>
         <h3 className="text-lg font-light text-[#666666]">Casa Camps</h3>
         <p className="text-sm italic text-[#666666]">Paisaje integrador</p>

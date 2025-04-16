@@ -19,7 +19,7 @@ interface GalleryNavbarProps {
 const GalleryNavbar = ({ onSelect, currentIndex }: GalleryNavbarProps) => {
   const router = useRouter();
   return (
-    <div className="px-8 py-4 flex flex-col justify-between gap-8 shadow-md">
+    <div className="px-8 py-4 flex gap-8 shadow-md">
       <div className="cursor-pointer" onClick={() => router.push("/")}>
         <Image src="/logoievsa2.png" alt="logo ievsa" width={80} height={0} />
       </div>
