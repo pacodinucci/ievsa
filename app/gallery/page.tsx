@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import GalleryNavbar from "@/components/GalleryNavbar";
 import {
   empresarialImages,
@@ -25,7 +26,17 @@ const menuOptions = [
 ];
 
 const GalleryPage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const searchParams = useSearchParams();
+  const initialIndex = parseInt(searchParams.get("index") || "0", 10);
+
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+
+  useEffect(() => {
+    const indexFromUrl = parseInt(searchParams.get("index") || "0", 10);
+    if (indexFromUrl !== currentIndex) {
+      setCurrentIndex(indexFromUrl);
+    }
+  }, [searchParams]);
 
   return (
     <div className="overflow-hidden">

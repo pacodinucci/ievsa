@@ -36,17 +36,17 @@ const escalas = [
   {
     title: "Residencial",
     src: "/residencial.png",
-    link: "/residencial",
+    link: "/gallery?index=0",
   },
   {
     title: "Empresarial",
     src: "/empresarial.png",
-    link: "/empresarial",
+    link: "/gallery?index=1",
   },
   {
     title: "Territorial",
     src: "/territorial.png",
-    link: "/territorial",
+    link: "/gallery?index=2",
   },
 ];
 
