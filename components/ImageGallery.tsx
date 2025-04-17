@@ -34,7 +34,7 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
           <button
             key={index}
             onClick={() => setSelectedIndex(index)}
-            className={`relative w-full h-[206px] aspect-square flex-shrink-0 overflow-hidden border-2 ${
+            className={`relative w-[120px] h-[120px] md:w-full md:h-[206px] aspect-square flex-shrink-0 overflow-hidden border-2 ${
               index === selectedIndex ? "border-black" : "border-transparent"
             } hover:border-gray-400 transition`}
           >

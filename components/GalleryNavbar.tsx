@@ -24,7 +24,7 @@ const GalleryNavbar = ({ onSelect, currentIndex }: GalleryNavbarProps) => {
         <Image src="/logoievsa2.png" alt="logo ievsa" width={80} height={0} />
       </div>
 
-      <div className="flex gap-6">
+      <div className="hidden md:flex gap-6">
         {menuOptions.map((option, index) => (
           <button
             key={index}
