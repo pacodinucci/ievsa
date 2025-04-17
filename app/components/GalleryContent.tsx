@@ -11,15 +11,15 @@ import {
 const menuOptions = [
   {
     title: "Residencial",
-    images: residencialProjects,
+    projects: residencialProjects,
   },
   {
     title: "Empresarial",
-    images: empresarialProjects,
+    projects: empresarialProjects,
   },
   {
     title: "Territorial",
-    images: territorialProjects,
+    projects: territorialProjects,
   },
 ];
 
@@ -54,13 +54,13 @@ const GalleryContent = () => {
               key={index}
               className="w-full flex-shrink-0 h-[calc(100vh)] bg-[#D9D5D0]" // Ajustar si nav/footer tienen otro alto
             >
-              {option.images.length === 1 ? (
+              {option.projects.length === 1 ? (
                 // Un solo proyecto → centrado verticalmente
                 <div className="h-full flex items-center justify-center">
                   <ScaleComponent
-                    name={option.images[0].name}
-                    description={option.images[0].description || ""}
-                    images={option.images[0].images}
+                    name={option.projects[0].name}
+                    description={option.projects[0].description || ""}
+                    images={option.projects[0].images}
                     //   details={option.images[0].details}
                   />
                 </div>
@@ -68,7 +68,7 @@ const GalleryContent = () => {
                 // Múltiples proyectos → scroll interno solo en esta columna
                 <div className="h-full overflow-y-auto no-scrollbar">
                   <div className="flex flex-col gap-16">
-                    {option.images.map((project, i) => (
+                    {option.projects.map((project, i) => (
                       <ScaleComponent
                         key={i}
                         name={project.name}
