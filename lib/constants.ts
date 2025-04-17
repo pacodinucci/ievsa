@@ -34,41 +34,75 @@ export const residencialProjects = [
     description: "Paisaje Integrador",
     images: [
       {
-        src: "/residencial1.jpg",
+        src: "/camps1.jpg",
         alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
       },
       {
-        src: "/residencial2.jpg",
+        src: "/camps2.jpg",
         alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
       },
       {
-        src: "/residencial3.jpg",
+        src: "/camps3.jpg",
         alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
       },
       {
-        src: "/residencial4.jpg",
+        src: "/camps4.jpg",
         alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
       },
     ],
   },
   {
-    name: "Casa Residencial 2",
+    name: "Y-90",
     description: "Paisaje Integrador 2",
     images: [
       {
-        src: "/residencial1.jpg",
+        src: "/y901.jpg",
         alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
       },
       {
-        src: "/residencial2.jpg",
+        src: "/y902.jpg",
         alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
       },
       {
-        src: "/residencial3.jpg",
+        src: "/y903.jpg",
         alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
       },
       {
-        src: "/residencial4.jpg",
+        src: "/y904.jpg",
+        alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+      },
+      {
+        src: "/y905.jpg",
+        alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+      },
+    ],
+  },
+  {
+    name: "EG-270",
+    description: "Paisaje Integrador 3",
+    images: [
+      {
+        src: "/EG2701.jpg",
+        alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+      },
+      {
+        src: "/EG2702.jpg",
+        alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
+      },
+      {
+        src: "/EG2703.jpg",
+        alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
+      },
+      {
+        src: "/EG2704.jpg",
+        alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+      },
+      {
+        src: "/EG2705.jpg",
+        alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+      },
+      {
+        src: "/EG2706.jpg",
         alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
       },
     ],

@@ -66,16 +66,17 @@ const GalleryContent = () => {
                 </div>
               ) : (
                 // Múltiples proyectos → scroll interno solo en esta columna
-                <div className="h-full overflow-y-auto no-scrollbar">
+                <div className="h-full overflow-y-auto no-scrollbar snap-y snap-mandatory">
                   <div className="flex flex-col gap-16">
                     {option.projects.map((project, i) => (
-                      <ScaleComponent
-                        key={i}
-                        name={project.name}
-                        description={project.description || ""}
-                        images={project.images}
-                        //   details={project.details}
-                      />
+                      <div key={i} className="snap-start">
+                        <ScaleComponent
+                          name={project.name}
+                          description={project.description || ""}
+                          images={project.images}
+                          //   details={project.details}
+                        />
+                      </div>
                     ))}
                   </div>
                 </div>
