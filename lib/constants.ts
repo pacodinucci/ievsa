@@ -28,59 +28,99 @@ export const proyectosSections = [
   },
 ];
 
-export const residencialImages = [
+export const residencialProjects = [
   {
-    src: "/residencial1.jpg",
-    alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+    name: "Casa Camps",
+    description: "Paisaje Integrador",
+    images: [
+      {
+        src: "/residencial1.jpg",
+        alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+      },
+      {
+        src: "/residencial2.jpg",
+        alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
+      },
+      {
+        src: "/residencial3.jpg",
+        alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
+      },
+      {
+        src: "/residencial4.jpg",
+        alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+      },
+    ],
   },
   {
-    src: "/residencial2.jpg",
-    alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
-  },
-  {
-    src: "/residencial3.jpg",
-    alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
-  },
-  {
-    src: "/residencial4.jpg",
-    alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+    name: "Casa Residencial 2",
+    description: "Paisaje Integrador 2",
+    images: [
+      {
+        src: "/residencial1.jpg",
+        alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+      },
+      {
+        src: "/residencial2.jpg",
+        alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
+      },
+      {
+        src: "/residencial3.jpg",
+        alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
+      },
+      {
+        src: "/residencial4.jpg",
+        alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+      },
+    ],
   },
 ];
 
-export const empresarialImages = [
+export const empresarialProjects = [
   {
-    src: "/empresarial1.jpg",
-    alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
-  },
-  {
-    src: "/empresarial2.jpg",
-    alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
-  },
-  {
-    src: "/empresarial3.jpg",
-    alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
-  },
-  {
-    src: "/empresarial4.jpg",
-    alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+    name: "Transchemical",
+    description: "Descripcion proyecto empresarial",
+    images: [
+      {
+        src: "/empresarial1.jpg",
+        alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+      },
+      {
+        src: "/empresarial2.jpg",
+        alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
+      },
+      {
+        src: "/empresarial3.jpg",
+        alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
+      },
+      {
+        src: "/empresarial4.jpg",
+        alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+      },
+    ],
   },
 ];
 
-export const territorialImages = [
+export const territorialProjects = [
   {
-    src: "/FINAL 1.jpg",
-    alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
-  },
-  {
-    src: "/FINAL 2.jpg",
-    alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
-  },
-  {
-    src: "/FINAL 3.jpg",
-    alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
-  },
-  {
-    src: "/FINAL 5.jpg",
-    alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+    name: "Tessalia",
+    description: "Descripcion proyecto territorial",
+    images: [
+      {
+        src: "/FINAL 1.jpg",
+        alt: "Acceso principal - Imagen luego de 3 meses de la ejecución. Tonalidades durante el año: Verdes varios.",
+      },
+      {
+        src: "/FINAL 2.jpg",
+        alt: "Sector de encuentro - Imagen luego de 6 meses de la ejecución. Tonalidades entre dorados, verdes y grises según estación.",
+      },
+      {
+        src: "/FINAL 3.jpg",
+        alt: "Vista desde terraza - Sector de encuentro - Imagen luego de 6 meses de la ejecución.",
+      },
+      {
+        src: "/FINAL 5.jpg",
+        alt: "Cantero lineal - Imagen luego de 6 meses de la ejecución. Tonalidades durante el año: verdes y ocres.",
+      },
+    ],
   },
 ];

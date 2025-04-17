@@ -3,23 +3,23 @@ import { useSearchParams } from "next/navigation";
 import GalleryNavbar from "@/components/GalleryNavbar";
 import ScaleComponent from "@/components/ScaleComponent";
 import {
-  empresarialImages,
-  residencialImages,
-  territorialImages,
+  empresarialProjects,
+  residencialProjects,
+  territorialProjects,
 } from "@/lib/constants";
 
 const menuOptions = [
   {
     title: "Residencial",
-    images: residencialImages,
+    images: residencialProjects,
   },
   {
     title: "Empresarial",
-    images: empresarialImages,
+    images: empresarialProjects,
   },
   {
     title: "Territorial",
-    images: territorialImages,
+    images: territorialProjects,
   },
 ];
 
@@ -52,9 +52,34 @@ const GalleryContent = () => {
           {menuOptions.map((option, index) => (
             <div
               key={index}
-              className="w-full flex-shrink-0 h-full flex items-center justify-center text-3xl font-semibold bg-gray-100"
+              className="w-full flex-shrink-0 h-[calc(100vh)] bg-[#D9D5D0]" // Ajustar si nav/footer tienen otro alto
             >
-              <ScaleComponent images={option.images} />
+              {option.images.length === 1 ? (
+                // Un solo proyecto → centrado verticalmente
+                <div className="h-full flex items-center justify-center">
+                  <ScaleComponent
+                    name={option.images[0].name}
+                    description={option.images[0].description || ""}
+                    images={option.images[0].images}
+                    //   details={option.images[0].details}
+                  />
+                </div>
+              ) : (
+                // Múltiples proyectos → scroll interno solo en esta columna
+                <div className="h-full overflow-y-auto no-scrollbar">
+                  <div className="flex flex-col gap-16">
+                    {option.images.map((project, i) => (
+                      <ScaleComponent
+                        key={i}
+                        name={project.name}
+                        description={project.description || ""}
+                        images={project.images}
+                        //   details={project.details}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
