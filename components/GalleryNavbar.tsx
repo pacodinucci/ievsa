@@ -30,7 +30,7 @@ const GalleryNavbar = ({ onSelect, currentIndex }: GalleryNavbarProps) => {
             key={index}
             className={`${
               montserrat.className
-            } text-[#243229] text-xs md:text-lg uppercase cursor-pointer hover:text-[#243229]/60 ${
+            } text-[#243229] text-[3.5vw] md:text-lg uppercase cursor-pointer hover:text-[#243229]/60 ${
               currentIndex === index ? "font-medium" : "font-light"
             }`}
             onClick={() => onSelect(index)}
