@@ -185,6 +185,7 @@ const Timeline = () => {
                   <div
                     key={index}
                     className="h-40 overflow-hidden w-[90vw] relative flex justify-center items-center"
+                    onClick={() => router.push(item.link)}
                   >
                     <Image
                       src={item.src}

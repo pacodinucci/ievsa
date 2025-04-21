@@ -21,7 +21,7 @@ const ScaleComponent = ({
   details,
 }: ScaleComponentProps) => {
   return (
-    <div className="flex flex-col gap-4 md:grid grid-cols-[15%_1fr_15%] px-8 py-12 w-full">
+    <div className="flex flex-col gap-4 md:grid grid-cols-[15%_1fr_15%] px-8 pt-4 pb-12 md:py-12 w-full">
       <div className={`${montserrat.className}`}>
         <h3 className="text-lg font-light text-[#666666]">{name}</h3>
         <p className="text-sm italic text-[#666666]">{description}</p>

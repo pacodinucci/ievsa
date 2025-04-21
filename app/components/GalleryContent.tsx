@@ -52,7 +52,7 @@ const GalleryContent = () => {
           {menuOptions.map((option, index) => (
             <div
               key={index}
-              className="w-full flex-shrink-0 h-[calc(100vh)] bg-[#D9D5D0]" // Ajustar si nav/footer tienen otro alto
+              className="w-full flex-shrink-0 h-[calc(95vh)] bg-[#D9D5D0]" // Ajustar si nav/footer tienen otro alto
             >
               {option.projects.length === 1 ? (
                 // Un solo proyecto → centrado verticalmente
@@ -67,7 +67,7 @@ const GalleryContent = () => {
               ) : (
                 // Múltiples proyectos → scroll interno solo en esta columna
                 <div className="h-full overflow-y-auto no-scrollbar snap-y snap-mandatory">
-                  <div className="flex flex-col gap-16">
+                  <div className="flex flex-col pb-16">
                     {option.projects.map((project, i) => (
                       <div key={i} className="snap-start">
                         <ScaleComponent
