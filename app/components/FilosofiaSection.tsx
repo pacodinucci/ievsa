@@ -18,7 +18,7 @@ const FilosofiaSection = () => {
 
   return (
     <div
-      className="relative min-h-screen pt-12 pb-12 md:pb-0 px-0 md:px-12 md:hidden xl:block bg-[#D9D5D0]"
+      className="relative min-h-screen pt-12 pb-12 md:pb-0 px-0 md:px-12 md:hidden xl:block bg-[#ECEBE9]"
       // style={{ backgroundImage: "url('/image13.png')" }}
     >
       {/* <div className="absolute inset-0 bg-[#D9D5D0] z-0"></div> */}

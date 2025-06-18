@@ -83,13 +83,21 @@ export const ProjectSection = () => {
         {sections.map((label, index) => (
           <button
             key={index}
+            // onClick={() => {
+            //   const el = document.getElementById(`section-${index}`);
+            //   el?.scrollIntoView({
+            //     behavior: "smooth",
+            //     inline: "center",
+            //     block: "start",
+            //   });
+            // }}
             onClick={() => {
+              const container = document.querySelector(".scroll-container"); // asegurate de darle esta clase al contenedor
               const el = document.getElementById(`section-${index}`);
-              el?.scrollIntoView({
-                behavior: "smooth",
-                inline: "start",
-                block: "nearest",
-              });
+              if (el && container) {
+                const left = el.offsetLeft;
+                container.scrollTo({ left, behavior: "smooth" });
+              }
             }}
             className={`${
               montserrat.className
@@ -105,7 +113,7 @@ export const ProjectSection = () => {
       </div>
 
       {/* SECCIONES HORIZONTALES CONTROLADAS POR MENÚ */}
-      <div className="w-full overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory">
+      <div className="scroll-container w-full overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory">
         <div className="flex w-[400vw] bg-white">
           {proyectosSections.map((section, index) => (
             <section
@@ -115,11 +123,12 @@ export const ProjectSection = () => {
               ref={(el) => {
                 sectionRefs.current[index] = el;
               }}
-              className="h-[90vh] w-screen flex flex-col justify-center items-center p-8 snap-start"
+              className="h-auto w-screen flex flex-col items-center p-8 snap-start"
             >
               <ProjectSnap
                 title={section.title}
                 text={section.text}
+                description={section.description}
                 images={section.images}
                 index={index}
               />

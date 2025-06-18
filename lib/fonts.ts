@@ -12,6 +12,7 @@ import {
   Lato,
   Martel_Sans,
   Source_Sans_3,
+  IBM_Plex_Sans,
 } from "next/font/google";
 
 export const inter = Inter({
@@ -77,4 +78,10 @@ export const martel = Martel_Sans({
 export const source = Source_Sans_3({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+export const ibm = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });

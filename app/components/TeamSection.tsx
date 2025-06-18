@@ -13,7 +13,7 @@ const TeamSection = () => {
   const [expandedBox, setExpandedBox] = useState<string | null>(null);
 
   return (
-    <div className="py-16 px-0 md:px-12 pb-6 md:pb-12 bg-[#D9D5D0]">
+    <div className="py-16 px-0 md:px-12 pb-6 md:pb-12 bg-[#ECEBE9]">
       <motion.div
         ref={ref}
         initial={{ x: -200, opacity: 0 }}

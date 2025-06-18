@@ -13,24 +13,33 @@ export const proyectosSections = [
   },
   {
     title: "Croquis preliminar",
-    text: "Siendo la primer etapa corresponde a la primer aproximación de idea. En este caso trabajamos sobre la intensión proyectual, sectorizando y estructurando la propuesta, comunicando intenciones e ideas sin definir la morfología final, sino los espacios y sus jerarquías. Se presentan los primeros croquis de idea, bocetos e imágenes de referencia. A continuación se detallan fragmentos correspondientes a ésta etapa.",
+    text: "Como primer etapa es una aproximación de idea. En este caso trabajamos sobre la intención proyectual, sectorizando y estructurando la propuesta, comunicando intenciones e ideas sin definir la morfología final, sino los espacios y sus jerarquías.",
+    description:
+      "Se presentan los primeros croquis de idea, bocetos e imágenes de referencia. A continuación algunos fragmentos.",
     images: [
-      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750254462/ievsa/galeria/proyecto/croquis1_vxftmp.png",
-      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750254464/ievsa/galeria/proyecto/croquis2_t1yb03.png",
+      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750257244/ievsa/galeria/proyecto/Preliminar_1_cbedtf.png",
+      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750257246/ievsa/galeria/proyecto/Preliminar_2_f62oer.png",
     ],
   },
   {
     title: "Anteproyecto",
-    text: "Siendo la segunda etapa nos dedicamos a bajar a tierra las ideas y formalizar la propuesta, definiendo volumetría, materialidades y dimensiones, como así diseño del mobiliario, selección de especies vegetales, entre otros. Se presenta la planta general, cortes, detalles y renders de la propuesta, y todo el material gráfico para comunicar el anteproyecto. A continuación se detallan fragmentos correspondientes a ésta etapa.",
+    text: "Como segunda etapa nos dedicamos a bajar a tierra las ideas y formalizar la propuesta, definiendo volumetría, materialidades y dimensiones, selección de especies vegetales, entre otros.",
+    description:
+      "Se presenta la planta general, cortes, detalles y renders de la propuesta, y todo el material gráfico para comunicar el anteproyecto. A continuación se detallan fragmentos correspondientes a ésta etapa.",
     images: [
-      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750254459/ievsa/galeria/proyecto/anteproyecto1_flm71u.png",
-      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750254461/ievsa/galeria/proyecto/anteproyecto2_rxtfpp.png",
+      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750257236/ievsa/galeria/proyecto/Anteproyecto_1_xagnkx.png",
+      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750257238/ievsa/galeria/proyecto/Anteproyecto_2_epaejx.png",
     ],
   },
   {
     title: "Proyecto ejecutivo",
-    text: "Siendo la última etapa corresponde a la documentación de obra. Teniendo el anteproyecto definido se procede a realizar la documentación y los detalles constructivos correspondientes para su posterior ejecución. Se presentan planos de replanteo, detalles de materialidades y procedimientos constructivos. A continuación se detallan fragmentos correspondientes a ésta etapa.",
-    images: ["/croquis1.png", "/croquis2.png"],
+    text: "Como tercer y última etapa nos dedicamos a la documentación de obra. Teniendo el anteproyecto definido se procede a realizar la documentación y los detalles constructivos correspondientes para su posterior ejecución.",
+    description:
+      "Se presentan planos de replanteo, detalles de materialidades y procedimientos constructivos. A continuación se detallan fragmentos correspondientes a ésta etapa.",
+    images: [
+      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750257239/ievsa/galeria/proyecto/Ejecutivo_1_dxsxr1.png",
+      "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750257242/ievsa/galeria/proyecto/Ejecutivo_2_x10ilp.png",
+    ],
   },
 ];
 

@@ -17,7 +17,7 @@ const FilosofiaTablet = () => {
   }, [images?.length, images]);
 
   return (
-    <div className="relative min-h-screen py-12 md:pb-0 px-0 md:px-12 hidden md:block xl:hidden bg-[#D9D5D0]">
+    <div className="relative min-h-screen py-12 md:pb-0 px-0 md:px-12 hidden md:block xl:hidden bg-[#ECEBE9]">
       <SectionTitle
         title="Filosofía y valores"
         className="uppercase text-green-950 mt-12"
