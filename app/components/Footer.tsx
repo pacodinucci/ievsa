@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div
       id="contacto"
-      className={`flex justify-between items-center px-8 h-[20vh] ${
+      className={`flex justify-between items-center px-8 md:px-24 h-[20vh] ${
         isGallery ? "bg-white" : "bg-[#D9D5D0]"
       }`}
     >
