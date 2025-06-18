@@ -98,6 +98,40 @@ export const ProjectMobile = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const container = contentRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const sectionWidth = container.offsetWidth;
+      const index = Math.round(scrollLeft / sectionWidth);
+      setActiveIndex(index);
+    };
+
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const activeBtn = buttonRefs.current[activeIndex];
+    const scrollContainer = scrollRef.current;
+    if (!activeBtn || !scrollContainer) return;
+
+    const btnRect = activeBtn.getBoundingClientRect();
+    const containerRect = scrollContainer.getBoundingClientRect();
+    const offset =
+      btnRect.left -
+      containerRect.left -
+      scrollContainer.clientWidth / 2 +
+      btnRect.width / 2;
+
+    scrollContainer.scrollBy({
+      left: offset,
+      behavior: "smooth",
+    });
+  }, [activeIndex]);
+
   const sections = [
     {
       title: "Arquitectura del paisaje",
@@ -167,6 +201,7 @@ export const ProjectMobile = () => {
               <ProjectSnap
                 title={section.title}
                 text={section.text}
+                description={section.description}
                 images={section.images}
                 index={index}
               />
