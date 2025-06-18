@@ -12,14 +12,13 @@ interface LandingProps {
 const Landing = ({ isMobileMenuOpen }: LandingProps) => {
   const { scrollY } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
-  // const [siMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Detecta si es móvil (menor a 768px)
+      setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // Ejecutar al cargar la página
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -34,10 +33,10 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
   const logoLeft = useTransform(
     scrollY,
     [0, 600],
-    isMobile ? ["5%", "3%"] : ["30%", "3%"]
+    isMobile ? ["10%", "3%"] : ["30%", "3%"]
   );
 
-  const logoTop = useTransform(scrollY, [0, 600], ["40%", "3.2%"]);
+  const logoTop = useTransform(scrollY, [0, 600], ["40%", "4%"]);
 
   const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
 

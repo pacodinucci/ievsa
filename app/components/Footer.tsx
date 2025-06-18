@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div
       id="contacto"
-      className={`flex justify-center items-center gap-x-24 h-[20vh] ${
+      className={`flex justify-between items-center px-8 h-[20vh] ${
         isGallery ? "bg-white" : "bg-[#D9D5D0]"
       }`}
     >
@@ -30,10 +30,9 @@ const Footer = () => {
           onClick={() => router.push("/")}
         />
       </div>
-      <span className="border border-[#20361e] h-[60%]" />
-      <div className="flex flex-col gap-y-4">
-        {/* <p className={`MyriadValores`}>Contactános</p> */}
-        <div className="text-[#20361e] flex gap-x-8">
+      <span className="border border-[#20361e] h-[30%]" />
+      <div className="flex flex-col">
+        <div className="text-[#20361e] flex gap-x-4">
           <a href="mailto:contacto@ievsa.com.ar">
             <GoMail size={30} className="cursor-pointer" />
           </a>

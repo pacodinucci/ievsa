@@ -57,7 +57,7 @@ const Timeline = () => {
                   {step.title}
                 </h3>
                 <p
-                  className={`text-gray-600 text-xl mt-2 transition-all group-hover:text-gray-500`}
+                  className={`text-gray-600 text-xl pl-4 mt-2 transition-all group-hover:text-gray-500`}
                 >
                   {step.description}
                 </p>
