@@ -17,7 +17,7 @@ const ProjectSnap = ({
   index,
 }: ProjectSnapProps) => {
   return (
-    <div className="w-full flex flex-col md:flex-row md:px-24 gap-8">
+    <div className="w-full flex flex-col md:flex-row md:justify-between md:px-24 gap-8">
       <div className="flex flex-col gap-6">
         <p
           className={`${ibm.className} text-lg font-semibold ${

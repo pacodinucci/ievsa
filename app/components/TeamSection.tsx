@@ -33,7 +33,7 @@ const TeamSection = () => {
         <div id="equipo" className="absolute bottom-16 left-0 opacity-0" />
       </motion.div>
       <div className="block md:hidden">
-        <p className="MyriadFont max-w-full md:w-[80%] px-6 py-6 text-left">
+        <p className="MyriadValores max-w-full md:w-[80%] px-6 py-6 text-left">
           Planificamos y diseñamos espacios para ser habitados, priorizando una
           mirada integral donde el bienestar, el cuidado natural y el
           aprovechamiento de los espacios es un compromiso. Entendemos al
