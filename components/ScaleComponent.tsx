@@ -7,18 +7,24 @@ interface ImageItem {
   alt: string;
 }
 
+interface ProjectDetails {
+  proposal: string;
+  surface: string;
+  principal: string;
+}
+
 interface ScaleComponentProps {
   name: string;
   description: string;
   images: ImageItem[];
-  details?: string[];
+  additional_data?: ProjectDetails;
 }
 
 const ScaleComponent = ({
   name,
   description,
   images,
-  details,
+  additional_data,
 }: ScaleComponentProps) => {
   return (
     <div className="flex flex-col gap-4 md:grid grid-cols-[15%_1fr_15%] px-8 pt-4 pb-12 md:py-12 w-full">
@@ -32,9 +38,9 @@ const ScaleComponent = ({
       <div
         className={`${montserrat.className} flex flex-col items-end justify-end text-xs text-[#666666]`}
       >
-        <p className="italic">- Propuesta integral de paisaje</p>
-        <p className="italic">- Sup. del terreno 1000 m²</p>
-        <p className="italic">- Comitente particular</p>
+        <p className="italic">- {additional_data?.proposal}</p>
+        <p className="italic">- {additional_data?.surface}</p>
+        <p className="italic">- {additional_data?.principal}</p>
       </div>
     </div>
   );

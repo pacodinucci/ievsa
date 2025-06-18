@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
-import SectionTitle from "./SectionTitle";
 import Image from "next/image";
-
-const images = [
-  "/IG1.png",
-  "/IG2.png",
-  "/IG3.png",
-  "/IG4.png",
-  "/IG5.png",
-  "/IG6.png",
-];
+import SectionTitle from "./SectionTitle";
+import { philoImages as images } from "@/lib/constants";
 
 const FilosofiaSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -35,7 +27,7 @@ const FilosofiaSection = () => {
       <div className="relative z-10 min-h-screen">
         <SectionTitle
           title="Filosofía y valores"
-          className="uppercase text-green-950 mt-12"
+          className="px-6 md:px-0 uppercase text-green-950 mt-12"
         />
         <div className="flex flex-col md:flex-row items-center">
           <p className="MyriadValoresXl2 w-[65%] px-24 p-24 hidden md:hidden xl2:block">

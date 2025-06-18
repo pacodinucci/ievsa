@@ -2,26 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import GalleryNavbar from "@/components/GalleryNavbar";
 import ScaleComponent from "@/components/ScaleComponent";
-import {
-  empresarialProjects,
-  residencialProjects,
-  territorialProjects,
-} from "@/lib/constants";
-
-const menuOptions = [
-  {
-    title: "Residencial",
-    projects: residencialProjects,
-  },
-  {
-    title: "Empresarial",
-    projects: empresarialProjects,
-  },
-  {
-    title: "Territorial",
-    projects: territorialProjects,
-  },
-];
+import { galleryMenuOptions as menuOptions } from "@/lib/constants";
 
 const GalleryContent = () => {
   const searchParams = useSearchParams();
@@ -61,7 +42,7 @@ const GalleryContent = () => {
                     name={option.projects[0].name}
                     description={option.projects[0].description || ""}
                     images={option.projects[0].images}
-                    //   details={option.images[0].details}
+                    additional_data={option.projects[0].additional_data}
                   />
                 </div>
               ) : (
@@ -74,7 +55,7 @@ const GalleryContent = () => {
                           name={project.name}
                           description={project.description || ""}
                           images={project.images}
-                          //   details={project.details}
+                          additional_data={project.additional_data}
                         />
                       </div>
                     ))}

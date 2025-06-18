@@ -1,44 +1,9 @@
 import React, { useRef, useState } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import SectionTitle from "./SectionTitle";
-import { X } from "lucide-react";
 import Image from "next/image";
-
-const team = [
-  {
-    name: "Iván Palacios",
-    title: "Ingeniero agrónomo y fundador de IEVSA",
-    role: "Encargado de gestión comercial. Coordinación y dirección de obra.",
-    text: [
-      "Es el pilar de nuestro equipo, destacándose por su excelente comunicación con los clientes y su trato atento con todos los integrantes del equipo.",
-      "Su experiencia y compromiso aseguran que cada diseño se ejecute con presición y calidad, superando las expectativas de nuestros clientes. En IEVSA, bajo su dirección, transformamos ideas en espacios verdes funcionales, buscando siempre dejar una huella positiva en el paisaje",
-    ],
-    note: "El es el encargado de que  las ideas se materialicen como fueron pensadas.",
-    src: "/ivan.png",
-  },
-  {
-    name: "Iara Parisi",
-    title: "Lic. en Planificación y diseño del paisaje",
-    role: "Diseñadora encargada de proyecto y dirección de obra.",
-    text: [
-      "Líder de proyectos en IEVSA, combina su experiencia como diseñadora y docente para dirigir con pasión el equipo de diseño.",
-      "Su enfoque centrado en crear espacios con identidad, integra de manera equilibrada los deseos del comensal con los principios del estudio sobre la intervención en el paisaje natural. Comprometiéndose a respetar el entorno, asegurando que cada proyecto ofrezca un espacio habitable y funcional, sin perder de vista la importancia de transformarlo además en hábitat para flora y fauna local.",
-    ],
-    note: "Ella es la encargada de transmitir las intenciones proyectuales.",
-    src: "/iara.png",
-  },
-  {
-    name: "Melany Vitalevi",
-    title: "Lic. en planificación y diseño del paisaje",
-    role: "Diseñadora proyectista y encargada de documentación de obra.",
-    text: [
-      "Dibujante y proyectista en IEVSA, especializada en el diseño integrando diferentes disciplinas.",
-      "Sus planos y detalles técnicos cumplen rigurosamente con los estándares de calidad y seguridad según el sector, y gracias a su visión del diseño y representación gráfica, logra una integración continua entre lo construido y el entorno natural. Encargada de la documentación necesaria para garantizar que cada proyecto se ejecute y construya con la máxima precisión, cuidando el ecosistema y promoviendo la sostenibilidad.",
-    ],
-    note: "Ella es la encargada de proyectar y bajar al plano las ideas.",
-    src: "/meli.png",
-  },
-];
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import SectionTitle from "./SectionTitle";
+import { team } from "@/lib/constants";
 
 const TeamSection = () => {
   const ref = useRef(null);
@@ -60,23 +25,25 @@ const TeamSection = () => {
         className="hidden md:block relative"
       >
         <p className="MyriadFont max-w-full md:w-[80%] px-6 md:px-24 py-6 md:p-24 text-center md:text-left leading-relaxed">
-          Diseñamos espacios sensoriales para ser vividos desde una mirada
-          antrópica y natural, entendemos el paisaje cómo un conector entre la
-          arquitectura y el territorio que habitamos.
+          Planificamos y diseñamos espacios para ser habitados, priorizando una
+          mirada integral donde el bienestar, el cuidado natural y el
+          aprovechamiento de los espacios es un compromiso. Entendemos al
+          paisaje como un nexo entre la arquitectura y el territorio.
         </p>
         <div id="equipo" className="absolute bottom-16 left-0 opacity-0" />
       </motion.div>
       <div className="block md:hidden">
         <p className="MyriadFont max-w-full md:w-[80%] px-6 py-6 text-left">
-          Diseñamos espacios sensoriales para ser vividos desde una mirada
-          antrópica y natural, entendemos el paisaje cómo un conector entre la
-          arquitectura y el territorio que habitamos.
+          Planificamos y diseñamos espacios para ser habitados, priorizando una
+          mirada integral donde el bienestar, el cuidado natural y el
+          aprovechamiento de los espacios es un compromiso. Entendemos al
+          paisaje como un nexo entre la arquitectura y el territorio.
         </p>
       </div>
       <div>
         <SectionTitle
           title="Equipo"
-          className="mt-12 text-green-950 uppercase"
+          className="px-6 md:px-0 mt-12 text-green-950 uppercase"
         />
         <motion.div
           ref={equipoRef}
@@ -174,27 +141,6 @@ const TeamSection = () => {
           )}
         </AnimatePresence>
       </div>
-      {/* <div>
-        <SectionTitle
-          title="Filosofía y valores"
-          className="uppercase text-green-950 mt-60"
-        />
-        <p className="MyriadValores w-[80%] px-24 p-24">
-          Para desarrollar una propuesta de diseño, es necesario abordar
-          diversos aspectos que permitan una visión integral del territorio.
-          Esto implica comprender su geomorfología, hidrología, composición
-          florística y la relevancia ecosistémica, considerando la fauna que lo
-          habita. Este análisis es crucial independientemente de la escala, ya
-          que nos centramos en una intervención macro, en la que los pequeños
-          espacios desempeñan su rol como parche conector dentro de la matriz
-          general que es el territorio urbano.
-        </p>
-      </div> */}
-      {/* <div>
-        El entendimiento del territorio cómo un ecosistema permite tener una
-        actitud conciliadora y respetuosa con el entorno, interviniendo los
-        espacios con el men impacto posible sobre nuestros ecosistemas.
-      </div> */}
     </div>
   );
 };

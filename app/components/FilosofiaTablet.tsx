@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
-import SectionTitle from "./SectionTitle";
 import Image from "next/image";
-
-const images = [
-  "/IG1.png",
-  "/IG2.png",
-  "/IG3.png",
-  "/IG4.png",
-  "/IG5.png",
-  "/IG6.png",
-];
+import SectionTitle from "./SectionTitle";
+import { philoImages as images } from "@/lib/constants";
 
 const FilosofiaTablet = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

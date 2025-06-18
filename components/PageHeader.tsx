@@ -13,7 +13,7 @@ const PageHeader = ({ title }: PageHeaderProps) => {
 
   return (
     <div>
-      <div className="pl-24 pt-12">
+      <div className="pl-6 pt-6 md:pl-24 md:pt-12">
         <Image
           src="/logoievsa2.png"
           alt="logo ievsa"
@@ -33,7 +33,7 @@ const PageHeader = ({ title }: PageHeaderProps) => {
       </div>
       <SectionTitle
         title={title}
-        className="uppercase text-green-950 mt-16 mb-12 px-12"
+        className="uppercase text-green-950 mt-6 md:mt-16 mb-12 px-6 md:px-12"
       />
     </div>
   );

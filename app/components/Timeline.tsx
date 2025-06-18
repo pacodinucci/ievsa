@@ -4,51 +4,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { montserrat, source } from "@/lib/fonts";
 import SectionTitle from "./SectionTitle";
-
-const processSteps = [
-  {
-    id: 1,
-    title: "Proyecto",
-    description:
-      "We'll prepare and submit a formal application to your local planning department.",
-    image: "/image1.png",
-    link: "/proyecto",
-  },
-  {
-    id: 2,
-    title: "Obra",
-    description:
-      "We'll get your yard ready by installing the foundation and utility connections.",
-    image: "/image2.png",
-    link: "/obra",
-  },
-  {
-    id: 3,
-    title: "Servicio Post-Venta",
-    description:
-      "Your backyard begins its journey from our factory to your home.",
-    image: "/image3.png",
-    link: "/postventa",
-  },
-];
-
-const escalas = [
-  {
-    title: "Residencial",
-    src: "/residencial.png",
-    link: "/gallery?index=0",
-  },
-  {
-    title: "Empresarial",
-    src: "/empresarial.png",
-    link: "/gallery?index=1",
-  },
-  {
-    title: "Territorial",
-    src: "/territorial.png",
-    link: "/gallery?index=2",
-  },
-];
+import { escalas, processSteps } from "@/lib/constants";
 
 const Timeline = () => {
   const router = useRouter();

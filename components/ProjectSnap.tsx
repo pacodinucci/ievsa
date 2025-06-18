@@ -3,19 +3,20 @@ import Image from "next/image";
 type ProjectSnapProps = {
   title?: string;
   text: string;
-  images: string[]; // debe contener exactamente 2 rutas
+  images: string[];
   index: number;
 };
 
 const ProjectSnap = ({ title, text, images, index }: ProjectSnapProps) => {
   return (
-    <div className="w-full flex justify-between px-24 gap-8">
+    <div className="w-full flex flex-col md:flex-row md:justify-between md:px-24 gap-8">
       <p
-        className={`${index === 0 ? "w-[80%]" : "w-[40%]"} MyriadValoresMobile`}
+        className={`${
+          index === 0 ? "w-[80%]" : "w-[80%] md:w-[40%]"
+        } MyriadValoresMobile`}
       >
         {text}
       </p>
-      {/* {index !== 0 && ( */}
       <div className="flex">
         {images.map((image, index) => (
           <Image
@@ -27,7 +28,6 @@ const ProjectSnap = ({ title, text, images, index }: ProjectSnapProps) => {
           />
         ))}
       </div>
-      {/* )} */}
     </div>
   );
 };
