@@ -18,6 +18,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "IEVSA",
   description: "Ingeniería en espacios verdes",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
