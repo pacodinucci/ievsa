@@ -1,105 +1,16 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PageHeader from "@/components/PageHeader";
-import { projectText, proyectosSections } from "@/lib/constants";
+import { proyectosSections } from "@/lib/constants";
 import Image from "next/image";
-import { montserrat } from "@/lib/fonts";
-import ProjectSnap from "@/components/ProjectSnap";
+import { ibm, montserrat } from "@/lib/fonts";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const ProjectMobile = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = contentRef.current;
-    if (!container) return;
-
-    const sectionWidth = container.offsetWidth;
-    container.scrollTo({
-      left: activeIndex * sectionWidth,
-      behavior: "smooth",
-    });
-  }, [activeIndex]);
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    const handleScroll = () => {
-      const containerCenter = scrollContainer.offsetWidth / 2;
-      let closestIndex = 0;
-      let closestDistance = Infinity;
-
-      buttonRefs.current.forEach((btn, i) => {
-        if (btn) {
-          const rect = btn.getBoundingClientRect();
-          const distance = Math.abs(
-            rect.left + rect.width / 2 - containerCenter
-          );
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestIndex = i;
-          }
-        }
-      });
-
-      setActiveIndex(closestIndex);
-    };
-
-    scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
-    return () => scrollContainer.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     const container = scrollRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      const { scrollTop, scrollHeight, clientHeight } = container;
-      const isAtBottom = scrollTop + clientHeight >= scrollHeight;
-      const isScrollingDown = e.deltaY > 0;
-
-      if (isAtBottom && isScrollingDown) {
-        e.preventDefault();
-        window.scrollBy({ top: e.deltaY, behavior: "instant" });
-      }
-    };
-
-    container.addEventListener("wheel", handleWheel, { passive: false });
-
-    return () => {
-      container.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = Number(entry.target.getAttribute("data-index"));
-          if (entry.isIntersecting) {
-            setActiveIndex(index);
-          }
-        });
-      },
-      { root: null, rootMargin: "0px", threshold: 0.5 }
-    );
-
-    sectionRefs.current.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => {
-      sectionRefs.current.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
-  }, []);
-
-  useEffect(() => {
-    const container = contentRef.current;
     if (!container) return;
 
     const handleScroll = () => {
@@ -113,101 +24,97 @@ export const ProjectMobile = () => {
     return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const activeBtn = buttonRefs.current[activeIndex];
-    const scrollContainer = scrollRef.current;
-    if (!activeBtn || !scrollContainer) return;
+  const scrollToIndex = (index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
 
-    const btnRect = activeBtn.getBoundingClientRect();
-    const containerRect = scrollContainer.getBoundingClientRect();
-    const offset =
-      btnRect.left -
-      containerRect.left -
-      scrollContainer.clientWidth / 2 +
-      btnRect.width / 2;
-
-    scrollContainer.scrollBy({
-      left: offset,
+    const sectionWidth = container.offsetWidth;
+    container.scrollTo({
+      left: index * sectionWidth,
       behavior: "smooth",
     });
-  }, [activeIndex]);
+  };
 
-  const sections = [
-    {
-      title: "Arquitectura del paisaje",
-      content: "Contenido del croquis preliminar...",
-    },
-    {
-      title: "Croquis Preliminar",
-      content: "Contenido del croquis preliminar...",
-    },
-    { title: "Anteproyecto", content: "Contenido del anteproyecto..." },
-    {
-      title: "Proyecto Ejecutivo",
-      content: "Contenido del proyecto ejecutivo...",
-    },
-  ];
+  const goLeft = () => {
+    if (activeIndex > 0) scrollToIndex(activeIndex - 1);
+  };
+
+  const goRight = () => {
+    if (activeIndex < proyectosSections.length - 1) {
+      scrollToIndex(activeIndex + 1);
+    }
+  };
 
   return (
     <div className="bg-[#F2F2F2] min-h-screen">
       <PageHeader title="Proyecto" />
 
-      {/* MENÚ DE NAVEGACIÓN HORIZONTAL */}
-      <div
-        ref={scrollRef}
-        className="w-full flex gap-6 py-6 px-6 overflow-x-auto snap-x snap-mandatory no-scrollbar -mt-6"
-      >
-        {sections.map((label, index) => (
-          <button
-            key={index}
-            ref={(el) => {
-              buttonRefs.current[index] = el;
-            }}
-            onClick={() => {
-              buttonRefs.current[index]?.scrollIntoView({
-                behavior: "smooth",
-                inline: "center",
-              });
-            }}
+      {/* TÍTULO DINÁMICO CON FLECHAS */}
+      <div className="h-16 flex justify-center items-center relative">
+        {proyectosSections.map((section, i) => (
+          <h2
+            key={i}
             className={`${
               montserrat.className
-            } uppercase px-4 py-2 font-medium transition snap-center shrink-0 ${
-              activeIndex === index
-                ? "text-green-950 border-b-2 border-green-950"
-                : "text-green-950 hover:text-black"
+            } uppercase absolute text-xl text-green-950 transition-opacity duration-500 ${
+              i === activeIndex ? "opacity-100" : "opacity-0"
             }`}
           >
-            {label.title}
-          </button>
+            {section.title}
+          </h2>
         ))}
+
+        {/* Flechas de navegación */}
+        <button
+          onClick={goLeft}
+          className="absolute left-2 p-2 text-green-950 disabled:opacity-30"
+          disabled={activeIndex === 0}
+        >
+          <ChevronLeft size={28} />
+        </button>
+        <button
+          onClick={goRight}
+          className="absolute right-2 p-2 text-green-950 disabled:opacity-30"
+          disabled={activeIndex === proyectosSections.length - 1}
+        >
+          <ChevronRight size={28} />
+        </button>
       </div>
 
-      {/* SECCIONES HORIZONTALES CONTROLADAS POR MENÚ */}
+      {/* CONTENEDOR SCROLLABLE */}
       <div
-        ref={contentRef}
-        className="w-full overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory"
+        ref={scrollRef}
+        className="overflow-x-auto snap-x snap-mandatory flex w-full no-scrollbar"
       >
-        <div className="flex w-[400vw]">
-          {proyectosSections.map((section, index) => (
-            <section
-              key={index}
-              id={`section-${index}`}
-              data-index={index}
-              ref={(el) => {
-                sectionRefs.current[index] = el;
-              }}
-              className="w-screen flex flex-col items-center p-8 snap-start"
+        {proyectosSections.map((section, index) => (
+          <div
+            key={index}
+            className="w-screen shrink-0 snap-start p-4 flex flex-col items-center"
+          >
+            <p className={`${ibm.className} text-lg font-semibold mb-2`}>
+              {section.text}
+            </p>
+            <p
+              className={`${ibm.className} text-base italic text-gray-700 mb-4`}
             >
-              <ProjectSnap
-                title={section.title}
-                text={section.text}
-                description={section.description}
-                images={section.images}
-                index={index}
-              />
-            </section>
-          ))}
-        </div>
+              {section.description}
+            </p>
+
+            {/* Mostrar imágenes si existen */}
+            <div className="flex flex-col gap-4 items-center">
+              {section.images?.map((src, i) => (
+                <Image
+                  key={i}
+                  src={src}
+                  alt={`Imagen ${i + 1}`}
+                  width={500}
+                  height={300}
+                  className="rounded shadow"
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
