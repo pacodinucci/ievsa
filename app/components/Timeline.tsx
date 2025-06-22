@@ -30,7 +30,7 @@ const Timeline = () => {
       {/* Línea Cronológica */}
       <div className="relative flex flex-col items-center space-y-12 p-6 md:p-12 mt-24">
         {/* Línea central */}
-        <div className="absolute inset-0 left-[12%] md:left-1/2 transform -translate-x-1/2 w-1 bg-[#A69B97]"></div>
+        <div className="absolute inset-0 left-[11.3%] md:left-1/2 transform -translate-x-1/2 w-1 bg-[#A69B97]"></div>
 
         {/* Pasos */}
         {processSteps.map((step, index) => (

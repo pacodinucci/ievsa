@@ -91,7 +91,7 @@ export const ProjectMobile = () => {
             key={index}
             className="w-screen shrink-0 snap-start p-4 flex flex-col items-center"
           >
-            <p className={`${ibm.className} text-lg font-semibold mb-2`}>
+            <p className={`${ibm.className} text-lg font-medium mb-2`}>
               {section.text}
             </p>
             <p

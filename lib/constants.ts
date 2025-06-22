@@ -233,7 +233,7 @@ export const processSteps = [
       "Acompañamiento de jardinería de manera estacional preparándolo de la mejor manera para cada ocasión.",
     image:
       "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750250256/ievsa/timeline/image3_od14cn.png",
-    link: "/postventa",
+    link: "/",
   },
 ];
 
