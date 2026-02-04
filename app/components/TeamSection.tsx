@@ -53,7 +53,7 @@ const TeamSection = () => {
             duration: 1,
             ease: "easeOut",
           }}
-          className="mt-12 md:px-12 flex justify-between flex-col md:flex-row items-center gap-y-8 gap-x-4"
+          className="mt-12 md:px-12 flex justify-between md:justify-around flex-col md:flex-row items-center gap-y-8 gap-x-4"
         >
           {team.map((item) => (
             <motion.div

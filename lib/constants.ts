@@ -278,17 +278,6 @@ export const team = [
     note: "Ella es la encargada de transmitir las intenciones proyectuales.",
     src: "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750198105/ievsa/iara_lefbgi.png",
   },
-  {
-    name: "Lic. Melany Vitalevi",
-    title: "Lic. en planificación y diseño del paisaje",
-    role: " Proyectista. Planificación, Diseño y documentación técnica.",
-    text: [
-      "Dibujante y proyectista en IEVSA, especializada en el diseño integrando diferentes disciplinas.",
-      "Sus planos y detalles técnicos cumplen rigurosamente con los estándares de calidad y seguridad según el sector, y gracias a su visión del diseño y representación gráfica, logra una integración continua entre lo construido y el entorno natural. Encargada de la documentación necesaria para garantizar que cada proyecto se ejecute y construya con la máxima precisión, cuidando el ecosistema y promoviendo la sostenibilidad.",
-    ],
-    note: "Ella es la encargada de proyectar y bajar al plano las ideas.",
-    src: "https://res.cloudinary.com/ddtpavjz2/image/upload/v1750198161/ievsa/meli_lg5y0z.png",
-  },
 ];
 
 export const galleryMenuOptions = [
