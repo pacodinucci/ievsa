@@ -17,11 +17,11 @@ const Footer = () => {
     <>
       <div
         id="contacto"
-        className={`flex flex-row-reverse justify-end md:justify-center items-center py-8 px-8 md:px-24 h-auto ${
+        className={`flex flex-col md:flex-row-reverse justify-center items-center gap-y-6 py-8 px-8 md:px-24 h-auto ${
           isGallery ? "bg-white" : "bg-[#D9D5D0]"
         } relative`}
       >
-        <div className="flex absolute bottom-10 right-10">
+        <div className="flex md:absolute md:bottom-10 md:right-10">
           <div className="text-[#20361e] flex gap-x-8">
             <a href="mailto:contacto@ievsa.com.ar">
               <GoMail size={30} className="cursor-pointer" />
@@ -42,13 +42,13 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="scale-50 md:scale-100">
+        <div className="order-first md:order-none">
           <Image
             src="/logoievsa2.png"
             alt="logo ievsa"
             width={200}
             height={100}
-            className="cursor-pointer"
+            className="w-32 md:w-[200px] h-auto cursor-pointer"
             onClick={() => router.push("/")}
           />
         </div>

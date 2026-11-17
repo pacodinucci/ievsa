@@ -30,13 +30,9 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
     isMobile ? [350, 100] : [620, 120]
   );
 
-  const logoLeft = useTransform(
-    scrollY,
-    [0, 600],
-    isMobile ? ["10%", "3%"] : ["30%", "3%"]
-  );
-
-  const logoTop = useTransform(scrollY, [0, 600], ["40%", "4%"]);
+  const logoLeft = useTransform(scrollY, [0, 600], ["50%", "3%"]);
+  const logoTop = useTransform(scrollY, [0, 600], ["50%", "4%"]);
+  const logoOffset = useTransform(scrollY, [0, 600], ["-50%", "0%"]);
 
   const textOpacity = useTransform(scrollY, [0, 300], [1, 0]);
 
@@ -45,17 +41,13 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
       <div className="relative min-h-[100dvh] flex justify-center items-center bg-[#F2F2F2] overflow-hidden mx-4">
         {/* Líneas horizontales animadas */}
         <motion.span
-          className={`w-[90%] bg-green-950 h-[1.5px] absolute top-10 ${
-            isMobile ? "left-5" : "left-20"
-          }`}
+          className="w-[90%] bg-green-950 h-[1.5px] absolute top-10 left-1/2 -translate-x-1/2"
           style={{
             opacity: textOpacity,
           }}
         />
         <motion.span
-          className={`w-[90%] bg-green-950 h-[1.5px] absolute bottom-10 ${
-            isMobile ? "left-5" : "left-20"
-          }`}
+          className="w-[90%] bg-green-950 h-[1.5px] absolute bottom-10 left-1/2 -translate-x-1/2"
           style={{
             opacity: textOpacity,
           }}
@@ -66,9 +58,11 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
           style={{
             position: "fixed",
             width: logoSize,
-            height: logoSize,
+            maxWidth: "calc(100vw - 2rem)",
             top: logoTop,
             left: logoLeft,
+            x: logoOffset,
+            y: logoOffset,
           }}
           className={`${
             isMobileMenuOpen
@@ -91,7 +85,7 @@ const Landing = ({ isMobileMenuOpen }: LandingProps) => {
             />
             <motion.h2
               style={{ opacity: textOpacity }}
-              className={`${source.className} uppercase text-[#243329] text-center text-[.88rem] md:text-[1.67rem] tracking-widest font-[300] whitespace-nowrap`}
+              className={`${source.className} uppercase text-[#243329] text-center text-[clamp(0.6rem,3.5vw,0.88rem)] md:text-[1.67rem] tracking-widest font-[300] whitespace-nowrap`}
             >
               Ingeniería en espacios verdes S.A.
             </motion.h2>
