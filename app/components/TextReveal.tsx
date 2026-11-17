@@ -13,7 +13,11 @@ const TextReveal = () => {
     lettersRef.current = [];
     return [
       lettersRef,
-      (ref: T | null) => ref && lettersRef.current.push(ref),
+      (ref: T | null): void => {
+        if (ref) {
+          lettersRef.current.push(ref);
+        }
+      },
     ] as const;
   }
 
