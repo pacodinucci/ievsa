@@ -1,87 +1,31 @@
-import {
-  Inter,
-  Roboto_Mono,
-  Roboto,
-  Oswald,
-  Anton,
-  Noto_Sans_JP,
-  Playfair_Display,
-  Montserrat,
-  Righteous,
-  Raleway,
-  Lato,
-  Martel_Sans,
-  Source_Sans_3,
-  IBM_Plex_Sans,
-} from "next/font/google";
+import localFont from "next/font/local";
 
-export const inter = Inter({
-  subsets: ["latin"],
+export const montserrat = localFont({
+  src: "../app/fonts/montserrat/Montserrat[wght].ttf",
+  weight: "100 900",
+  style: "normal",
   display: "swap",
 });
 
-export const roboto_mono = Roboto_Mono({
-  subsets: ["latin"],
+export const source = localFont({
+  src: "../app/fonts/sourcesans3/SourceSans3[wght].ttf",
+  weight: "200 900",
+  style: "normal",
   display: "swap",
 });
 
-export const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700"],
-});
-
-export const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
-});
-
-export const anton = Anton({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-export const noto = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-export const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
-export const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-});
-
-export const righteous = Righteous({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-export const raleway = Raleway({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-export const lato = Lato({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
-});
-
-export const martel = Martel_Sans({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "600", "700", "800", "900"],
-});
-
-export const source = Source_Sans_3({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-export const ibm = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+export const ibm = localFont({
+  src: [
+    {
+      path: "../app/fonts/ibmplexsans/IBMPlexSans[wdth,wght].ttf",
+      weight: "100 700",
+      style: "normal",
+    },
+    {
+      path: "../app/fonts/ibmplexsans/IBMPlexSans-Italic[wdth,wght].ttf",
+      weight: "100 700",
+      style: "italic",
+    },
+  ],
+  display: "swap",
 });
